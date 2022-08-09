@@ -1,0 +1,29 @@
+.flex {
+  display: flex;
+}
+.flex--column {
+  flex-direction: column;
+}
+.justify-content--c {
+  justify-content: center !important;
+}
+.justify-content--around {
+  justify-content: space-around;
+}
+.justify-content--between {
+  justify-content: space-between;
+}
+.align-items--c {
+  align-items: center;
+}
+.align-content--c {
+  align-content: center !important;
+}
+/* Moviles Grandes SM */
+@media only screen and (min-device-width: $sm_min-device-width) {}
+/* Tablets MED */
+@media only screen and (min-device-width: $med_min-device-width) {}
+/* Pequeños Monitores LARG */
+@media only screen and (min-device-width: $larg_min-device-width) {}
+/* Resto */
+@media only screen and (min-device-width: $xl_min-device-width) {}

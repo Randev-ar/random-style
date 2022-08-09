@@ -7272,29 +7272,8 @@ h6 {
   .col--span--xl--12 {
     grid-column: span 12; } }
 
-.d--flex {
-  display: flex; }
-
 .d--none {
   display: none; }
-
-.flex--column {
-  flex-direction: column; }
-
-.justify-content--c {
-  justify-content: center !important; }
-
-.justify-content--around {
-  justify-content: space-around; }
-
-.justify-content--between {
-  justify-content: space-between; }
-
-.align-items--c {
-  align-items: center; }
-
-.align-content--c {
-  align-content: center !important; }
 
 .scroll--auto {
   overflow: auto !important; }
@@ -7439,6 +7418,31 @@ h6 {
 
 .h--10 {
   height: 100%; }
+
+/* Moviles Grandes SM */
+/* Tablets MED */
+/* Pequeños Monitores LARG */
+/* Resto */
+.flex {
+  display: flex; }
+
+.flex--column {
+  flex-direction: column; }
+
+.justify-content--c {
+  justify-content: center !important; }
+
+.justify-content--around {
+  justify-content: space-around; }
+
+.justify-content--between {
+  justify-content: space-between; }
+
+.align-items--c {
+  align-items: center; }
+
+.align-content--c {
+  align-content: center !important; }
 
 /* Moviles Grandes SM */
 /* Tablets MED */
