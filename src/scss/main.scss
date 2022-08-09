@@ -1,27 +1,11 @@
 @import "./normalize";
 @import "./variables";
 @import "./presets";
+@import "./colors";
 
-@import "./utils/colors";
-
-@import "./components/breadcrum";
-@import "./components/buttons";
-@import "./components/card";
-@import "./components/footer";
-@import "./components/forms"; 
-@import "./components/modal";
-@import "./components/navbar";
-@import "./components/progress";
-@import "./components/sidebar";
-@import "./components/slider";
-@import "./components/spinner";
-@import "./components/tables";
-
-@import "./animations/changeBgPosition";
-@import "./animations/latido";
-@import "./animations/spinner";
-
-@import "./utils";
+@import "./components/main";
+@import "./animations/main";
+@import "./utils/main";
 
 .userBG{
     background: linear-gradient(85deg, #28447e, #cc30e1, #76beff);
