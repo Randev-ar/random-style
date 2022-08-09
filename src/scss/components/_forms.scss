@@ -118,23 +118,19 @@ form * {
       }
     }
   }
-  // Alertas
-  @each $name-color, $bg-color in $colors {
-    .form__alerta--#{$name-color} {
-      background-color: $bg-color;
-      text-align: center;
-      grid-column: span 2;
-      height: 45px;
-      line-height: 45px;
-      padding: 0px 15px;
-      border-radius: 3px;
-      display: none;
-      p {
-        margin: 0;
-      }
-      B {
-        margin-left: 10px;
-      }
+  .form__alerta {
+    text-align: center;
+    grid-column: span 2;
+    height: 45px;
+    line-height: 45px;
+    padding: 0px 15px;
+    border-radius: 3px;
+    display: none;
+    p {
+      margin: 0;
+    }
+    B {
+      margin-left: 10px;
     }
   }
 }

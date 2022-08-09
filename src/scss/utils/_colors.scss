@@ -1,8 +1,10 @@
-@each $name-color, $bg-color in $colors {
-  .bg--#{$name-color} {
-    background-color: $bg-color;
-  }
-  .color--#{$name-color} {
-    color: $bg-color;
+@each $listName, $list in $colorsMap {
+  @each $color-name, $color in $list {
+    .bg-color--#{$color-name} {
+      background-color: $color;
+    }
+    .color--#{$color-name} {
+      color: $color;
+    }
   }
 }
