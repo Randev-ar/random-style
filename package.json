@@ -5,8 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build-animations-css": "node-sass --include-path scss src/scss/animations.scss dist/css/animations.css",
+    "build-utils-css": "node-sass --include-path scss src/scss/utils.scss dist/css/utils.css",
+    "build-components-css": "node-sass --include-path scss src/scss/components.scss dist/css/components.css",
     "build-css": "node-sass --include-path scss src/scss/main.scss dist/css/main.css",
-    "watch-css": "nodemon -e scss -x \" npm   run build-css\""
+    "watch-css": "nodemon -e scss -x \" npm   run build-css\"",
+    "build": "npm run build-css && npm run build-components-css && npm run build-utils-css && npm run build-animations-css"
   },
   "repository": {
     "type": "git",
@@ -20,6 +24,7 @@
   },
   "homepage": "https://github.com/Randev-ar/random-style#readme",
   "dependencies": {
+    "css-minify": "^2.0.0",
     "node-sass": "^7.0.1",
     "nodemon": "^2.0.19"
   }
