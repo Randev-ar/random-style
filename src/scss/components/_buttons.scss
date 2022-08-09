@@ -1,3 +1,4 @@
+
 .boton {
   border: none;
   cursor: pointer;
@@ -44,6 +45,44 @@
     transition: 0.3s ease all;
   }
 
+  @each $listName, $list in $colorsMap {
+    @each $color-name, $color in $list {  
+      &.e--1.e-color--#{$color-name}{
+        &::after {
+          background-color: $color;
+        }
+      }
+      &.e--2.e-color--#{$color-name}{
+        &::after {
+          border-bottom: 80px solid $color;
+        }
+      }
+      &.e--3.e-color--#{$color-name}{
+        &::after {
+          background-color: $color;
+        }
+      }
+      &.e--4.e-color--#{$color-name}{
+        &:hover {
+          &::after {
+            background-color: $color;
+          }
+        }
+      }
+      &.e--5.e-color--#{$color-name}{
+        &:hover {
+          background-color: $color;
+        }
+      }
+      &.e--6.e-color--#{$color-name}{
+        color: $color;
+        rect {
+          stroke: $color;
+        }
+      }
+    }
+  }
+
   &.e--1 {
     &::after {
       content: "";
@@ -54,13 +93,6 @@
       top: -100%;
       left: 0;
       transition: 0.3s ease-in-out all;
-      @each $listName, $list in $colorsMap {
-        @each $color-name, $color in $list {
-          &.e-color--#{$color-name} {
-            background-color: $color;
-          }
-        }
-      }
     }
     &:hover {
       &::after {
@@ -80,14 +112,6 @@
       left: calc(-150% - 80px);
 
       border-right: 80px solid transparent;
-
-      @each $listName, $list in $colorsMap {
-        @each $color-name, $color in $list {
-          &.e-color--#{$color-name} {
-            border-bottom: 80px solid $color;
-          }
-        }
-      }
       transition: 0.4s ease-in-out all;
     }
     &:hover {
@@ -102,13 +126,6 @@
       content: "";
       width: 100%;
       height: 300%;
-      @each $listName, $list in $colorsMap {
-        @each $color-name, $color in $list {
-          &.e-color--#{$color-name} {
-            background-color: $color;
-          }
-        }
-      }
       position: absolute;
       z-index: 1;
       top: -300%;
@@ -140,13 +157,6 @@
     &:hover {
       &::after {
         transform: scale(400);
-        @each $listName, $list in $colorsMap {
-          @each $color-name, $color in $list {
-            &.e-color--#{$color-name} {
-              background-color: $color;
-            }
-          }
-        }
       }
     }
   }
@@ -171,13 +181,6 @@
       }
     }
     &:hover {
-      @each $listName, $list in $colorsMap {
-        @each $color-name, $color in $list {
-          &.e-color--#{$color-name} {
-            background-color: $color;
-          }
-        }
-      }
       span {
         left: 20px;
       }
@@ -192,7 +195,7 @@
     background-color: transparent;
     @each $listName, $list in $colorsMap {
       @each $color-name, $color in $list {
-        &.e-color--#{$color-name} {
+        .e-color--#{$color-name} {
           color: $color;
         }
       }
@@ -210,7 +213,7 @@
       height: 100%;
       @each $listName, $list in $colorsMap {
         @each $color-name, $color in $list {
-          &.e-color--#{$color-name} {
+          .e-color--#{$color-name} {
             stroke: $color;
           }
         }
