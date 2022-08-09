@@ -1,0 +1,79 @@
+.grid {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+@for $i from 1 through 12 {
+  .grid--#{$i} {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    grid-template-columns: repeat(#{$i}, 1fr);
+  }
+  .col--span--#{$i} {
+    grid-column: span #{$i};
+  }
+}
+
+/* Moviles Grandes */
+@media only screen and (min-device-width: $sm_min-device-width) {
+  @for $i from 1 through 12 {
+    .grid--sm--#{$i} {
+      display: grid;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      grid-template-columns: repeat(#{$i}, 1fr);
+    }
+    .col--span--sm--#{$i} {
+      grid-column: span #{$i};
+    }
+  }
+}
+/* Tablets */
+@media only screen and (min-device-width: $med_min-device-width) {
+  @for $i from 1 through 12 {
+    .grid--med--#{$i} {
+      display: grid;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      grid-template-columns: repeat(#{$i}, 1fr);
+    }
+    .col--span--med--#{$i} {
+      grid-column: span #{$i};
+    }
+  }
+}
+/* Pequeños Monitores */
+@media only screen and (min-device-width: $larg_min-device-width) {
+  @for $i from 1 through 12 {
+    .grid--larg--#{$i} {
+      display: grid;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      grid-template-columns: repeat(#{$i}, 1fr);
+    }
+    .col--span--larg--#{$i} {
+      grid-column: span #{$i};
+    }
+  }
+}
+/* Resto */
+@media only screen and (min-device-width: $xl_min-device-width) {
+  @for $i from 1 through 12 {
+    .grid--xl--#{$i} {
+      display: grid;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      grid-template-columns: repeat(#{$i}, 1fr);
+    }
+    .col--span--xl--#{$i} {
+      grid-column: span #{$i};
+    }
+  }
+}

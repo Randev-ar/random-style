@@ -1,0 +1,36 @@
+
+  th, td {
+    padding: 20px;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: grey;
+  }
+  
+  tbody tr:nth-child(even) {
+    padding: 1rem;
+    background-color: #b0acac;
+  }
+  
+  table {
+    background-color: #28447e;
+  }
+
+  caption {
+    font-family: 'Rock Salt', cursive;
+    padding: 20px;
+    font-style: italic;
+    caption-side: bottom;
+    color: #666;
+    text-align: right;
+    letter-spacing: 1px;
+  }
+
+  thead, tfoot {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+  
+  thead th, tfoot th, tfoot td {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+  }

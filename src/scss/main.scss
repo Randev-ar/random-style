@@ -1,0 +1,39 @@
+@import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
+@import "./variables";
+@import "./presets";
+
+@import "./utils/colors";
+
+@import "./components/breadcrum";
+@import "./components/buttons";
+@import "./components/card";
+@import "./components/footer";
+@import "./components/forms"; 
+@import "./components/modal";
+@import "./components/navbar";
+@import "./components/progress";
+@import "./components/sidebar";
+@import "./components/slider";
+@import "./components/spinner";
+@import "./components/tables";
+
+@import "./animations/changeBgPosition";
+@import "./animations/latido";
+@import "./animations/spinner";
+
+@import "./utils/containers";
+@import "./utils/fonts";
+@import "./utils/grid";
+@import "./utils/helpers";
+
+.userBG{
+    background: linear-gradient(85deg, #28447e, #cc30e1, #76beff);
+    -webkit-animation: ChangeBgPosition 10s ease infinite;
+    -moz-animation: ChangeBgPosition 10s ease infinite;
+    animation: ChangeBgPosition 10s ease infinite;
+    background-size: 600% 600%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

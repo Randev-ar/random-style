@@ -1,0 +1,123 @@
+.slider {
+  margin: auto;
+  background-color: $background;
+  width: 100%;
+  .slider__body {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    width: inherit;
+    height: 300px;
+    li {
+      position: absolute;
+      background-color: $background;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      width: inherit;
+      height: inherit;
+      transition: opacity 0.5s;
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+      &:first-child {
+        opacity: 1;
+      }
+      &:target {
+        opacity: 1;
+      }
+    }
+  }
+  .slider__menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    margin-top: 1rem;
+    width: inherit;
+    li {
+      display: inline-block;
+      text-align: center;
+      background-color: grey;
+      padding: 10px;
+      height: 40px;
+      width: 40px;
+      font-size: 20px;
+      border-radius: 100%;
+      margin-right: 3px;
+      a {
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+      }
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.slider--auto {
+  position: relative;
+  overflow: hidden;
+  min-height: 50%;
+
+  .slideshow {
+    display: flex;
+    flex-wrap: nowrap;
+    .slide {
+      width: 100%;
+      transition: 0.3s ease all;
+      z-index: 1;
+      position: relative;
+      min-height: 50%;
+      img {
+        width: 100%;
+        object-fit: cover;
+        vertical-align: top;
+      }
+
+      .slide__text {
+        background: rgba(0, 0, 0, 0.5);
+        color: bisque;
+        width: 100%;
+        padding: 1rem 6rem;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }
+
+  .slide__controls {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    .slide__button {
+      pointer-events: all;
+      background: none;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      width: 5rem;
+      height: 100%;
+      text-align: center;
+      position: absolute;
+      transition: 0.3s ease all;
+      left: 0;
+      z-index: 1;
+      &:last-of-type {
+        left: unset;
+        right: 0;
+      }
+    }
+  }
+}

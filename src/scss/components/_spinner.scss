@@ -1,0 +1,18 @@
+.spinner {
+  display: flex;
+  justify-content: center;
+  &.full-height {
+    align-items: center;
+    height: 100%;
+  }
+  &::after {
+    content: "";
+    width: 90px;
+    height: 90px;
+    background: $background;
+    border: 10px solid $gray-400;
+    border-top-color: $primary;
+    border-radius: 50%;
+    animation: spinner 1s ease infinite;
+  }
+}

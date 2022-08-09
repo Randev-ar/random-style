@@ -1,0 +1,71 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  
+  background: linear-gradient(85deg, #28447e, #cc30e1, #76beff);
+  -webkit-animation: ChangeBgPosition 10s ease infinite;
+  -moz-animation: ChangeBgPosition 10s ease infinite;
+  animation: ChangeBgPosition 10s ease infinite;
+  background-size: 600% 600%;
+  
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  span {
+    font-weight: bold;
+  }
+  .btn-social {
+    background-size: 16px;
+    &:hover {
+      color: $secondary;
+    }
+  }
+}
+
+.faq-footer {
+  width: 100%;
+  padding: 3px;
+  margin: 0;
+}
+.faq-footer--text {
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem;
+  a {
+    text-decoration: none;
+    color: $primary;
+    cursor: pointer;
+    font-weight: bolder;
+    &:hover {
+      color: $terciary;
+    }
+  }
+}
+
+.corazon {
+  background-color: red;
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  margin: 0 10px;
+  top: 0;
+  transform: rotate(-45deg);
+  animation: latido 1s infinite;
+  &::before,
+  &::after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+  }
+  &:before {
+    top: -5px;
+    left: 0;
+  }
+  &:after {
+    left: 5px;
+    top: 0;
+  }
+}
