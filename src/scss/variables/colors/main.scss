@@ -1,3 +1,8 @@
+@import './blue';
+@import './gray';
+@import './purple';
+@import './theme';
+
 // Colores
 $colors: (
   primary: $primary,
@@ -50,12 +55,3 @@ $colors: (
   blue-800: $blue-800,
   blue-900: $blue-900,
 );
-
-@each $name-color, $bg-color in $colors {
-  .bg--#{$name-color} {
-    background-color: $bg-color;
-  }
-  .color--#{$name-color} {
-    color: $bg-color !important;
-  }
-}

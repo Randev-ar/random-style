@@ -1,0 +1,27 @@
+/*========== BREAKPOINTS ========== */
+//XS
+$xs_min-device-width: 0px;
+$xs_max-device-width: 576px;
+//SM
+$sm_min-device-width: 576px;
+$sm_max-device-width: 768px;
+//MED
+$med_min-device-width: 768px;
+$med_max-device-width: 992px;
+//LARG
+$larg_min-device-width: 992px;
+$larg_max-device-width: 1200px;
+//XL
+$xl_min-device-width: 1200px;
+$xl_max-device-width: 1400px;
+//XXL
+$xxl_min-device-width: 1400px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);

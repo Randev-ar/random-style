@@ -1,0 +1,10 @@
+@import './colors/main.scss';
+@import './breakpoints';
+@import './shadows';
+
+// GOOGLE FONTS
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300;1,400;1,700;wght@1,900&display=swap");
+
+$fuente: "Roboto", sans-serif;
+$body_font-size: 18px;
+$w-conteiner: 1200px;
