@@ -1,0 +1,101 @@
+@for $i from 0 through 12 {
+    .m--#{$i} {
+      margin: #{$i}rem;
+    }
+    .mt--#{$i} {
+      margin-top: #{$i}rem;
+    }
+    .mb--#{$i} {
+      margin-bottom: #{$i}rem;
+    }
+    .ms--#{$i} {
+      margin-left: #{$i}rem;
+    }
+    .me--#{$i} {
+      margin-right: #{$i}rem;
+    }
+}
+
+/* Moviles Grandes SM */
+@media only screen and (min-device-width: $sm_min-device-width) {
+    @for $i from 0 through 12 {
+      .m--sm--#{$i} {
+        margin: #{$i}rem;
+      }
+      .mt--sm--#{$i} {
+        margin-top: #{$i}rem;
+      }
+      .mb--sm--#{$i} {
+        margin-bottom: #{$i}rem;
+      }
+      .ms--sm--#{$i} {
+        margin-left: #{$i}rem;
+      }
+      .me--sm--#{$i} {
+        margin-right: #{$i}rem;
+      }
+    }
+}
+
+/* Tablets MED */
+@media only screen and (min-device-width: $med_min-device-width) {
+    @for $i from 0 through 12 {
+      .m--med--#{$i} {
+        margin: #{$i}rem;
+      }
+      .mt--med--#{$i} {
+        margin-top: #{$i}rem;
+      }
+      .mb--med--#{$i} {
+        margin-bottom: #{$i}rem;
+      }
+      .ms--med--#{$i} {
+        margin-left: #{$i}rem;
+      }
+      .me--med--#{$i} {
+        margin-right: #{$i}rem;
+      }
+    }
+}
+
+/* Pequeños Monitores LARG */
+@media only screen and (min-device-width: $larg_min-device-width) {
+    @for $i from 0 through 12 {
+      .m--larg--#{$i} {
+        margin: #{$i}rem;
+      }
+      .mt--larg--#{$i} {
+        margin-top: #{$i}rem;
+      }
+      .mb--larg--#{$i} {
+        margin-bottom: #{$i}rem;
+      }
+      .ms--larg--#{$i} {
+        margin-left: #{$i}rem;
+      }
+      .me--larg--#{$i} {
+        margin-right: #{$i}rem;
+      }
+    }
+}
+
+/* Resto */
+@media only screen and (min-device-width: $xl_min-device-width) {
+    @for $i from 0 through 12 {
+      .m--xl--#{$i} {
+        margin: #{$i}rem;
+      }
+      .mt--xl--#{$i} {
+        margin-top: #{$i}rem;
+      }
+      .mb--xl--#{$i} {
+        margin-bottom: #{$i}rem;
+      }
+      .ms--xl--#{$i} {
+        margin-left: #{$i}rem;
+      }
+      .me--xl--#{$i} {
+        margin-right: #{$i}rem;
+      }
+    }
+}
