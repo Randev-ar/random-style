@@ -21,10 +21,7 @@
 @import "./animations/latido";
 @import "./animations/spinner";
 
-@import "./utils/containers";
-@import "./utils/fonts";
-@import "./utils/grid";
-@import "./utils/helpers";
+@import "./utils";
 
 .userBG{
     background: linear-gradient(85deg, #28447e, #cc30e1, #76beff);
