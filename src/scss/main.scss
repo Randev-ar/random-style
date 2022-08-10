@@ -7,7 +7,7 @@
 @import "./utils/main";
 
 .userBG{
-    background: linear-gradient(85deg, #28447e, #cc30e1, #76beff);
+    background: linear-gradient(85deg, $primary, $secondary, $terciary);
     -webkit-animation: ChangeBgPosition 10s ease infinite;
     -moz-animation: ChangeBgPosition 10s ease infinite;
     animation: ChangeBgPosition 10s ease infinite;

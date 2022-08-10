@@ -2655,6 +2655,24 @@ h6 {
 .color--purple-900 {
   color: #14052f; }
 
+.bg-color--randev-primary {
+  background-color: #28447E; }
+
+.color--randev-primary {
+  color: #28447E; }
+
+.bg-color--randev-secondary {
+  background-color: #CC30E1; }
+
+.color--randev-secondary {
+  color: #CC30E1; }
+
+.bg-color--randev-terciary {
+  background-color: #76BEFF; }
+
+.color--randev-terciary {
+  color: #76BEFF; }
+
 .bg-color--border {
   background-color: var(--border); }
 

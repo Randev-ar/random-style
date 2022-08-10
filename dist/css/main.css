@@ -693,6 +693,48 @@ img {
     color: #14052f; }
     .boton--e.e--6.e-color--purple-900 rect {
       stroke: #14052f; }
+  .boton--e.e--1.e-color--randev-primary::after {
+    background-color: #28447E; }
+  .boton--e.e--2.e-color--randev-primary::after {
+    border-bottom: 80px solid #28447E; }
+  .boton--e.e--3.e-color--randev-primary::after {
+    background-color: #28447E; }
+  .boton--e.e--4.e-color--randev-primary:hover::after {
+    background-color: #28447E; }
+  .boton--e.e--5.e-color--randev-primary:hover {
+    background-color: #28447E; }
+  .boton--e.e--6.e-color--randev-primary {
+    color: #28447E; }
+    .boton--e.e--6.e-color--randev-primary rect {
+      stroke: #28447E; }
+  .boton--e.e--1.e-color--randev-secondary::after {
+    background-color: #CC30E1; }
+  .boton--e.e--2.e-color--randev-secondary::after {
+    border-bottom: 80px solid #CC30E1; }
+  .boton--e.e--3.e-color--randev-secondary::after {
+    background-color: #CC30E1; }
+  .boton--e.e--4.e-color--randev-secondary:hover::after {
+    background-color: #CC30E1; }
+  .boton--e.e--5.e-color--randev-secondary:hover {
+    background-color: #CC30E1; }
+  .boton--e.e--6.e-color--randev-secondary {
+    color: #CC30E1; }
+    .boton--e.e--6.e-color--randev-secondary rect {
+      stroke: #CC30E1; }
+  .boton--e.e--1.e-color--randev-terciary::after {
+    background-color: #76BEFF; }
+  .boton--e.e--2.e-color--randev-terciary::after {
+    border-bottom: 80px solid #76BEFF; }
+  .boton--e.e--3.e-color--randev-terciary::after {
+    background-color: #76BEFF; }
+  .boton--e.e--4.e-color--randev-terciary:hover::after {
+    background-color: #76BEFF; }
+  .boton--e.e--5.e-color--randev-terciary:hover {
+    background-color: #76BEFF; }
+  .boton--e.e--6.e-color--randev-terciary {
+    color: #76BEFF; }
+    .boton--e.e--6.e-color--randev-terciary rect {
+      stroke: #76BEFF; }
   .boton--e.e--1.e-color--border::after {
     background-color: var(--border); }
   .boton--e.e--2.e-color--border::after {
@@ -1149,6 +1191,12 @@ img {
       color: #290c60; }
     .boton--e.e--6 .e-color--purple-900 {
       color: #14052f; }
+    .boton--e.e--6 .e-color--randev-primary {
+      color: #28447E; }
+    .boton--e.e--6 .e-color--randev-secondary {
+      color: #CC30E1; }
+    .boton--e.e--6 .e-color--randev-terciary {
+      color: #76BEFF; }
     .boton--e.e--6 .e-color--border {
       color: var(--border); }
     .boton--e.e--6 .e-color--error {
@@ -1273,6 +1321,12 @@ img {
         stroke: #290c60; }
       .boton--e.e--6 rect .e-color--purple-900 {
         stroke: #14052f; }
+      .boton--e.e--6 rect .e-color--randev-primary {
+        stroke: #28447E; }
+      .boton--e.e--6 rect .e-color--randev-secondary {
+        stroke: #CC30E1; }
+      .boton--e.e--6 rect .e-color--randev-terciary {
+        stroke: #76BEFF; }
       .boton--e.e--6 rect .e-color--border {
         stroke: var(--border); }
       .boton--e.e--6 rect .e-color--error {
@@ -1334,7 +1388,7 @@ img {
   justify-content: space-around;
   align-items: center;
   height: 50px;
-  background: linear-gradient(85deg, #28447e, #cc30e1, #76beff);
+  background: linear-gradient(85deg, var(--primary), var(--secondary), var(--terciary));
   -webkit-animation: ChangeBgPosition 10s ease infinite;
   -moz-animation: ChangeBgPosition 10s ease infinite;
   animation: ChangeBgPosition 10s ease infinite;
@@ -4904,6 +4958,24 @@ h6 {
 .color--purple-900 {
   color: #14052f; }
 
+.bg-color--randev-primary {
+  background-color: #28447E; }
+
+.color--randev-primary {
+  color: #28447E; }
+
+.bg-color--randev-secondary {
+  background-color: #CC30E1; }
+
+.color--randev-secondary {
+  color: #CC30E1; }
+
+.bg-color--randev-terciary {
+  background-color: #76BEFF; }
+
+.color--randev-terciary {
+  color: #76BEFF; }
+
 .bg-color--border {
   background-color: var(--border); }
 
@@ -5043,7 +5115,7 @@ h6 {
   color: var(--dark); }
 
 .userBG {
-  background: linear-gradient(85deg, #28447e, #cc30e1, #76beff);
+  background: linear-gradient(85deg, var(--primary), var(--secondary), var(--terciary));
   -webkit-animation: ChangeBgPosition 10s ease infinite;
   -moz-animation: ChangeBgPosition 10s ease infinite;
   animation: ChangeBgPosition 10s ease infinite;
