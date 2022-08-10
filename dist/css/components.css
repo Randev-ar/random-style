@@ -2048,31 +2048,36 @@ body {
     border-radius: 50%;
     animation: spinner 1s ease infinite; }
 
-th, td {
-  padding: 20px; }
+table.primaryGridTable {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse; }
 
-tbody tr:nth-child(odd) {
-  background-color: grey; }
+table.primaryGridTable td, table.primaryGridTable th {
+  color: #28447E;
+  padding: 3px 4px; }
 
-tbody tr:nth-child(even) {
-  padding: 1rem;
-  background-color: #b0acac; }
+table.primaryGridTable tbody td {
+  color: #28447E;
+  font-size: 13px; }
 
-table {
-  background-color: #28447e; }
+table.primaryGridTable tr:nth-child(even) {
+  background: #FFFFFF; }
 
-caption {
-  font-family: 'Rock Salt', cursive;
-  padding: 20px;
-  font-style: italic;
-  caption-side: bottom;
-  color: #666;
-  text-align: right;
-  letter-spacing: 1px; }
+table.primaryGridTable thead {
+  border-bottom: 4px solid #28447E; }
 
-thead, tfoot {
-  color: white;
-  text-shadow: 1px 1px 1px black; }
+table.primaryGridTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #28447E;
+  text-align: center; }
 
-thead th, tfoot th, tfoot td {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)); }
+table.primaryGridTable tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #28447E;
+  border-top: 4px solid #28447E; }
+
+table.primaryGridTable tfoot td {
+  font-size: 14px; }
