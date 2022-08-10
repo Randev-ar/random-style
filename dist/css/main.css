@@ -1451,18 +1451,12 @@ form * {
   overflow: visible; }
   .form .form__fieldset {
     border: none; }
-  .form .form__label,
-  .form .form__label--success,
-  .form .form__label--error {
+  .form .form__label {
     display: block;
     font-weight: 700;
     padding: 10px;
     min-height: 40px;
     cursor: pointer; }
-  .form .form__label--success {
-    color: var(--success); }
-  .form .form__label--error {
-    color: var(--error); }
   .form .form__item {
     width: 100%; }
   .form .form__grupo {
@@ -1982,7 +1976,7 @@ body {
   -webkit-animation: ChangeBgPosition 10s ease infinite;
   -moz-animation: ChangeBgPosition 10s ease infinite;
   animation: ChangeBgPosition 10s ease infinite;
-  background: linear-gradient(180deg, #28447e, #cc30e1, #76beff);
+  background: linear-gradient(180deg, var(--primary), var(--secondary), var(--terciary));
   height: 100vh;
   overflow-y: auto;
   background-size: 600% 600%; }

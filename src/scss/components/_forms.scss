@@ -11,20 +11,12 @@ form * {
     border: none;
   }
 
-  .form__label,
-  .form__label--success,
-  .form__label--error {
+  .form__label {
     display: block;
     font-weight: 700;
     padding: 10px;
     min-height: 40px;
     cursor: pointer;
-  }
-  .form__label--success {
-    color: $success;
-  }
-  .form__label--error {
-    color: $error;
   }
   .form__item {
     width: 100%;

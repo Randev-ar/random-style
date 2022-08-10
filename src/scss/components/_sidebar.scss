@@ -21,7 +21,7 @@ body {
   -moz-animation: ChangeBgPosition 10s ease infinite;
   animation: ChangeBgPosition 10s ease infinite;
   
-  background: linear-gradient(180deg, #28447e, #cc30e1, #76beff);
+  background: linear-gradient(180deg, $primary, $secondary, $terciary);
 
   height: 100vh;
   overflow-y: auto;
@@ -127,7 +127,7 @@ body {
     left: 0;
     width: 100%;
     background:rgba( 30, 35, 36, 0.8 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    box-shadow: $primar-shadow;
     backdrop-filter: blur( 13px );
     -webkit-backdrop-filter: blur( 13px );
     place-items: center;
