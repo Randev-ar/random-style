@@ -1,11 +1,82 @@
-.conteiner {
-  max-width: 90%;
+.conteiner,
+.container,
+.container--sm,
+.container--md,
+.container--lg,
+.container--xl,
+.container--xxl,
+.conteiner--fluid,
+.container--fluid {
+  max-width: 100%;
   margin: 20px auto;
   overflow: hidden;
 }
 
-.conteiner--fluid {
-  max-width: 100%;
+.conteiner--fluid,
+.container--fluid {
   padding: 0 40px;
-  margin: 20px auto;
+}
+
+/* Small */
+@media only screen and (min-device-width: $sm_min-device-width){
+  .container,
+  .container--sm{
+    max-width: 540px;
+  }
+  .container--md,
+  .container--lg,
+  .container--xl,
+  .container--xxl {
+    max-width: 100%;
+  }
+}
+/* Medium */
+@media only screen and (min-device-width: $med_min-device-width){
+  .container,
+  .container--sm,
+  .container--md {
+    max-width: 720px;
+  }
+  .container--lg,
+  .container--xl,
+  .container--xxl {
+    max-width: 100%;
+  }
+}
+/* Large */
+@media only screen and (min-device-width: $larg_min-device-width){
+  .container,
+  .container--sm,
+  .container--md,
+  .container--lg {
+    max-width: 960px;
+  }
+  .container--xl,
+  .container--xxl {
+    max-width: 100%;
+  }
+}
+/* X-Large */
+@media only screen and (min-device-width: $xl_min-device-width){
+  .container,
+  .container--sm,
+  .container--md,
+  .container--lg,
+  .container--xl {
+    max-width: 1140px;
+  }
+  .container--xxl {
+    max-width: 100%;
+  }
+}
+/* XX-Large */
+@media only screen and (min-device-width: $xxl_min-device-width){
+  .container,
+  .container--sm,
+  .container--md,
+  .container--lg,
+  .container--xl,
+  .container--xxl {
+    max-width: 1320px;
+  }
 }

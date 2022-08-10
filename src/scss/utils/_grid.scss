@@ -17,7 +17,7 @@
   }
 }
 
-/* Moviles Grandes */
+/* Small */
 @media only screen and (min-device-width: $sm_min-device-width) {
   @for $i from 1 through 12 {
     .grid--sm--#{$i} {
@@ -32,7 +32,7 @@
     }
   }
 }
-/* Tablets */
+/* Medium */
 @media only screen and (min-device-width: $med_min-device-width) {
   @for $i from 1 through 12 {
     .grid--med--#{$i} {
@@ -47,7 +47,7 @@
     }
   }
 }
-/* Pequeños Monitores */
+/* Large */
 @media only screen and (min-device-width: $larg_min-device-width) {
   @for $i from 1 through 12 {
     .grid--larg--#{$i} {
@@ -62,7 +62,7 @@
     }
   }
 }
-/* Resto */
+/* X-Large */
 @media only screen and (min-device-width: $xl_min-device-width) {
   @for $i from 1 through 12 {
     .grid--xl--#{$i} {
@@ -73,6 +73,21 @@
       grid-template-columns: repeat(#{$i}, 1fr);
     }
     .col--span--xl--#{$i} {
+      grid-column: span #{$i};
+    }
+  }
+}
+/* XX-Large */
+@media only screen and (min-device-width: $xxl_min-device-width) {
+  @for $i from 1 through 12 {
+    .grid--xxl--#{$i} {
+      display: grid;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      grid-template-columns: repeat(#{$i}, 1fr);
+    }
+    .col--span--xxl--#{$i} {
       grid-column: span #{$i};
     }
   }
