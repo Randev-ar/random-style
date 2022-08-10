@@ -1,51 +1,78 @@
-$border: #0075ff;
-$error: #bb2929;
-$error-bg: #f66060;
-$success-bg: #18a362;
-$background: #f2f2f2;
+:root {
+    --border: #0075ff;
+    --error: #bb2929;
+    --error-bg: #f66060;
+    --success-bg: #18a362;
+    --background: #f2f2f2;
 
-$primary: #28447E;
-$secondary: #CC30E1;
-$terciary: #76BEFF;
-$success: #1ed12d;
-$info: #0dcaf0;
-$warning: #ffc107;
-$danger: #dc3545;
-$light: #f8f9fa;
-$dark: #212529;
+    --primary: #28447E;
+    --secondary: #CC30E1;
+    --terciary: #76BEFF;
+    --success: #1ed12d;
+    --info: #0dcaf0;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #212529;
 
-$indigo: #6610f2;
-$purple: #6f42c1;
-$pink: #d63384;
-$red: #ff0019;
-$orange: #fd7e14;
-$yellow: #ffc721;
-$green: #198754;
-$teal: #20c997;
-$cyan: #00d5ff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #d63384;
+    --red: #ff0019;
+    --orange: #fd7e14;
+    --yellow: #ffc721;
+    --green: #198754;
+    --teal: #20c997;
+    --cyan: #00d5ff;
+}
+$border: var(--border);
+$error: var(--error);
+$error-bg: var(--error-bg);
+$success-bg: var(--success-bg);
+$background: var(--background);
+
+$primary: var(--primary);
+$secondary: var(--secondary);
+$terciary: var(--terciary);
+$success: var(--success);
+$info: var(--info);
+$warning: var(--warning);
+$danger: var(--danger);
+$light: var(--light);
+$dark: var(--dark);
+
+$indigo: var(--dark);
+$purple: var(--dark);
+$pink: var(--dark);
+$red: var(--dark);
+$orange: var(--dark);
+$yellow: var(--dark);
+$green: var(--dark);
+$teal: var(--dark);
+$cyan: var(--dark);
 
 $themeMap: (
-    border: #0075ff,
-    error: #bb2929,
-    error-bg: #f66060,
-    success-bg: #18a362,
-    background: #f2f2f2,
-    primary: #28447E,
-    secondary: #CC30E1,
-    terciary: #76BEFF,
-    success: #1ed12d,
-    info: #0dcaf0,
-    warning: #ffc107,
-    danger: #db293b,
-    light: #f8f9fa,
-    dark: #212529,
-    indigo: #6610f2,
-    purple: #6f42c1,
-    pink: #d63384,
-    red: #ff0019,
-    orange: #fd7e14,
-    yellow: #ffc721,
-    green: #198754,
-    teal: #20c997,
-    cyan: #00d5ff,
+    border: var(--border),
+    error: var(--error),
+    error-bg: var(--error-bg),
+    success-bg: var(--success-bg),
+    background: var(--background),
+    primary: var(--primary),
+    secondary: var(--secondary),
+    terciary: var(--terciary),
+    success: var(--success),
+    info: var(--info),
+    warning: var(--warning),
+    danger: var(--danger),
+    light: var(--light),
+    dark: var(--dark),
+    indigo: var(--dark),
+    purple: var(--dark),
+    pink: var(--dark),
+    red: var(--dark),
+    orange: var(--dark),
+    yellow: var(--dark),
+    green: var(--dark),
+    teal: var(--dark),
+    cyan: var(--dark),
 )
