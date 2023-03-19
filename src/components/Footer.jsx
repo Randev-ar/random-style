@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from '../../assets/logo.png';
 
 const Footer = () => {
     const linkedin = process.env.REACT_APP_SOCIAL_LINKEDING
@@ -50,7 +49,7 @@ const Footer = () => {
             <div className="faq-footer">
                 <p className='faq-footer--text'>
                     Made with <span className="corazon"></span> by <a href='https://www.randev.com.ar' >
-                        <img src={logo} className="App-logo" alt="logo" style={{maxWidth: '2.3rem', maxHeight: '2.3rem', verticalAlign: 'middle'}}/>
+                        {/* <img src={logo} className="App-logo" alt="logo" style={{maxWidth: '2.3rem', maxHeight: '2.3rem', verticalAlign: 'middle'}}/> */}
                         <span style={{fontWeight: '900',fontStyle: 'italic',textTransform: 'uppercase'}}>
                             <span className='color--primary'>ran</span>
                             <span className='color--secondary'>dev</span>

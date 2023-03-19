@@ -1,6 +1,6 @@
 import React, { useState }  from 'react'
-import logo from '../../assets/logo320x132.png'
-import userImg from '../../assets/guest.webp';
+/* import logo from '../../assets/logo320x132.png'
+import userImg from '../../assets/guest.webp'; */
 import { NavLink } from 'react-router-dom';
 
 const Sidebar = ({ user, logout, rol, style, navList }) => {
@@ -12,7 +12,7 @@ const Sidebar = ({ user, logout, rol, style, navList }) => {
 
             <div className="logo_content" >
                 <div className="logo" style={ style && style.logo }>
-                    <img src={ style?.logo?.src || logo} className="logoname" alt="logo"  style={{maxWidth: '10rem', maxHeight: '49px'}}/>
+                    {/* <img src={ style?.logo?.src || logo} className="logoname" alt="logo"  style={{maxWidth: '10rem', maxHeight: '49px'}}/> */}
                     {titulo && <div className="logoname">{titulo}</div>}
                 </div>
                 <i className="fa-solid fa-bars" id='btn' onClick={() => setActive(!active)}></i>
@@ -33,13 +33,13 @@ const Sidebar = ({ user, logout, rol, style, navList }) => {
                 <div className="profile">
                     <div className="profile_details">
                         <NavLink to='/profile'>
-                            <img src={user?.photoURL ? user.photoURL : userImg} 
+                            {/* <img src={user?.photoURL ? user.photoURL : userImg} 
                                 onError={({ currentTarget }) => {
                                     currentTarget.onerror = null; // prevents looping
                                     currentTarget.src="../../../assets/guest.webp";
                                 }}
                                 alt="imagen_del_usuario"
-                            />
+                            /> */}
                         </NavLink>
                         <div className="name_job">
                             <div className="name">{user?.displayName}</div>
