@@ -46,22 +46,21 @@ const ModalButtonWrapper = ({buttonText, children, className, bgClose, open, cla
         classNameModal&& setclassNameM(classNameModal)
     }, [open, classNameModal])
     
-    const onButtonClick = () => {
-        setVisible(true);
-    };
+    const onButtonClick = () => setVisible(true);
 
     const onClose = () => {
         open=false
         setVisible(false);
+        alCerrar && alCerrar()
     };
 
     return (
-        <div className={"modal__buttonWrapper "} onSubmit={onButtonClick}>
+        <>
             <button className={className} onClick={onButtonClick} type='button'><span>{buttonText}</span></button>
-            <Modal visible={visible} alCerrar={alCerrar} className={classNameM} onClose={onClose} bgClose={bgClose}>
+            <Modal visible={visible} className={classNameM} onClose={onClose} bgClose={bgClose}>
                 {children}
             </Modal>
-        </div>
+        </>
     );
 }
 
