@@ -223,23 +223,18 @@ const ModalButtonWrapper = ({
     open && setVisible(true);
     classNameModal && setclassNameM(classNameModal);
   }, [open, classNameModal]);
-  const onButtonClick = () => {
-    setVisible(true);
-  };
+  const onButtonClick = () => setVisible(true);
   const onClose = () => {
     open = false;
     setVisible(false);
+    alCerrar && alCerrar();
   };
-  return /*#__PURE__*/React.createElement("div", {
-    className: "modal__buttonWrapper ",
-    onSubmit: onButtonClick
-  }, /*#__PURE__*/React.createElement("button", {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
     className: className,
     onClick: onButtonClick,
     type: "button"
   }, /*#__PURE__*/React.createElement("span", null, buttonText)), /*#__PURE__*/React.createElement(Modal, {
     visible: visible,
-    alCerrar: alCerrar,
     className: classNameM,
     onClose: onClose,
     bgClose: bgClose
