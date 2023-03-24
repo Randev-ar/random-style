@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import logo from '../../assets/logo320x132.png';
 
-const Navbar = ({titulo, list}) => {
+const Navbar = ({src, titulo, list}) => {
     const [show, setShow] = useState('')
     return (
         <nav className="navbar--faqstyle">
             <label className='navbar__brand'>
-                <img src={logo} className="logoname" alt="logo"  style={{maxWidth: '10rem'}}/>
+                <img src={src} className="logoname" alt="logo"  style={{maxWidth: '10rem'}}/>
                 <p className="navbar__link">{titulo}</p>
             </label>
             <ul className={`navbar__linkGroup ${show}`}>

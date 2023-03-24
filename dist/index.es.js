@@ -239,4 +239,197 @@ const ModalButtonWrapper = ({
   }, children));
 };
 
-export { Breadcrum, Footer, Modal, ModalButtonWrapper, Sidebar, Spinner };
+/* This is a React component that receives a data object with headers and items. */
+const Table = props => {
+  const {
+    headers,
+    items,
+    className,
+    name,
+    id
+  } = props;
+  const [order, setOrder] = useState('');
+  const handleFilters = field => {
+    if (order === field) setOrder('');
+    setOrder(field);
+  };
+  const orderBy = (field, list) => {
+    const sortByField = (a, b) => {
+      if (a[field] < b[field]) {
+        return -1;
+      }
+      if (a[field] > b[field]) {
+        return 1;
+      }
+      return 0;
+    };
+    if (!list) return [];
+    return list?.sort(sortByField);
+  };
+  return /*#__PURE__*/React.createElement("table", {
+    className: className || 'primaryGridTable',
+    id: id
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, headers?.map(header => {
+    return /*#__PURE__*/React.createElement("th", {
+      key: `${header.field}_${name}`,
+      onClick: () => handleFilters(header.field)
+    }, header.name);
+  }))), /*#__PURE__*/React.createElement("tbody", null, orderBy(order, items)?.map(item => {
+    return /*#__PURE__*/React.createElement("tr", {
+      key: `${item.id}_${name}`
+    }, headers?.map((header, index) => {
+      if (index === 0) return /*#__PURE__*/React.createElement("th", {
+        scope: "row",
+        key: `${header.field}_${item.id}_${name}`
+      }, item[header.field]);
+      return /*#__PURE__*/React.createElement("td", {
+        key: `${header.field}_${item.id}_${name}`
+      }, item[header.field]);
+    }));
+  })));
+};
+
+const FormInput = ({
+  required,
+  label,
+  type,
+  name,
+  id,
+  defaultValue,
+  disabled,
+  className,
+  value,
+  onChange,
+  readOnly
+}) => {
+  const labelProps = {
+    htmlFor: name || '',
+    className: `form__label ${className?.label || ''}`
+  };
+  const commonProps = {
+    type: type || 'text',
+    name: name || '',
+    id: id || '',
+    disabled,
+    value,
+    onChange,
+    readOnly,
+    required
+  };
+  const textAreaProps = {
+    ...commonProps,
+    defaultValue: defaultValue || ``,
+    className: `form__grupo__textarea ${className?.textarea || ''}`
+  };
+  const inputProps = {
+    ...commonProps,
+    defaultValue: defaultValue || ``,
+    defaultChecked: defaultValue,
+    className: `form__grupo__input ${className?.input || ''}`
+  };
+  const checkBox = {
+    ...commonProps,
+    defaultChecked: defaultValue || false,
+    className: `form__grupo__input ${className?.input || ''}`
+  };
+  if (type === 'checkbox') return /*#__PURE__*/React.createElement("div", {
+    className: `form__grupo`
+  }, /*#__PURE__*/React.createElement("label", labelProps, label), /*#__PURE__*/React.createElement("input", checkBox));
+  return /*#__PURE__*/React.createElement("div", {
+    className: `form__grupo ${className?.grupo || ''}`
+  }, /*#__PURE__*/React.createElement("label", labelProps, label), type === 'textarea' ? /*#__PURE__*/React.createElement("textarea", textAreaProps) : /*#__PURE__*/React.createElement("input", inputProps));
+};
+
+function _extends() {
+  _extends = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends.apply(this, arguments);
+}
+
+/* A React component that is a select input. */
+const FormSelect = ({
+  value,
+  name,
+  className,
+  label,
+  defaultValue,
+  disabled,
+  id,
+  options,
+  onChange,
+  required,
+  multiple
+}) => {
+  const labelProps = {
+    htmlFor: name || '',
+    className: `form__label ${className?.label || ''}`
+  };
+  const selectProps = {
+    defaultValue: defaultValue || ``,
+    name: name || '',
+    id: id || '',
+    className: `form__grupo__textarea p--1 ${className?.select || ''}`,
+    disabled,
+    onChange,
+    value,
+    required,
+    multiple
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "form__grupo"
+  }, /*#__PURE__*/React.createElement("label", labelProps, " ", label, " "), /*#__PURE__*/React.createElement("select", selectProps, !defaultValue && /*#__PURE__*/React.createElement("option", {
+    className: "m--1",
+    defaultValue: true,
+    selected: true,
+    disabled: true,
+    hidden: true
+  }, "Seleccionar una opcion"), options?.map((option, index) => {
+    const optionProps = {
+      key: `${option.value}_${name}_${index}`,
+      value: `${option.value || index}`
+    };
+    return /*#__PURE__*/React.createElement("option", _extends({
+      className: "m--1"
+    }, optionProps), option.name || option.description);
+  })));
+};
+
+const Navbar = ({
+  src,
+  titulo,
+  list
+}) => {
+  const [show, setShow] = useState('');
+  return /*#__PURE__*/React.createElement("nav", {
+    className: "navbar--faqstyle"
+  }, /*#__PURE__*/React.createElement("label", {
+    className: "navbar__brand"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: src,
+    className: "logoname",
+    alt: "logo",
+    style: {
+      maxWidth: '10rem'
+    }
+  }), /*#__PURE__*/React.createElement("p", {
+    className: "navbar__link"
+  }, titulo)), /*#__PURE__*/React.createElement("ul", {
+    className: `navbar__linkGroup ${show}`
+  }, list), /*#__PURE__*/React.createElement("span", {
+    className: "navbar__btn",
+    onClick: () => show === '' ? setShow('show') : setShow('')
+  }, /*#__PURE__*/React.createElement("i", {
+    className: "fas fa-bars"
+  })));
+};
+
+export { Breadcrum, Footer, FormInput, FormSelect, Modal, ModalButtonWrapper, Navbar, Sidebar, Spinner, Table };

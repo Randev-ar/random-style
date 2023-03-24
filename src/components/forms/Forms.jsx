@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react"
 
-
-
 const Form = ({onSubmit, onChange, children}) => {
     return(
         <form className="form" onSubmit={onSubmit} onChange={onChange} >
@@ -38,7 +36,6 @@ const Input = ({ name, label, value, type, placeholder, expresionRegular, leyend
             }
         }
         if (required){
-            console.log(current)
             if(current?.length>0){
                 setValid('--success')
                 setSuccess('')
@@ -151,13 +148,11 @@ const Submit = ({ submited, submitedMessage, buttonText }) => {
     const [showMessage, setShowMessage] = useState(submited)
 
     useEffect(() => {
-        let isMounted = true;
-        if ( isMounted && submited ){
-            setShowMessage(true)
-
-            setTimeout(setShowMessage(false),10000);
-        }
-        return () => { isMounted = false }
+        const ctrl = new AbortController();
+        if (!submited) return
+        setShowMessage(true)
+        setTimeout(setShowMessage(false),10000);
+        return () => ctrl.abort()
     }, [submited])
 
     return(
