@@ -4,7 +4,7 @@ import {
     useLocation
 } from 'react-router-dom'
 
-const Breadcrum = () => {
+const Breadcrumb = () => {
     let location = useLocation();
     const [pathName, setPathName] = useState(null)
     let route= ''
@@ -38,4 +38,4 @@ const Breadcrum = () => {
     )
 }
 
-export default Breadcrum
+export default Breadcrumb

@@ -12,7 +12,7 @@ const FormSelect = ({ value, name, className, label, defaultValue, disabled, id,
     defaultValue: defaultValue || ``,
     name: name || '',
     id: id || '',
-    className: `form__grupo__textarea p--1 ${className?.select || ''}`,
+    className: `form__group__textarea p--1 ${className?.select || ''}`,
     disabled,
     onChange,
     value,
@@ -21,7 +21,7 @@ const FormSelect = ({ value, name, className, label, defaultValue, disabled, id,
   }
 
   return (
-    <div className="form__grupo">
+    <div className="form__group">
       <label {...labelProps}> {label} </label>
       <select {...selectProps}>
         {!defaultValue && <option className='m--1' defaultValue selected disabled hidden>Seleccionar una opcion</option>}

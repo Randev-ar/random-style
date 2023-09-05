@@ -18,28 +18,28 @@ const FormInput = ({required, label, type, name, id, defaultValue, disabled, cla
   const textAreaProps = {
     ...commonProps,
     defaultValue: defaultValue || ``,
-    className: `form__grupo__textarea ${className?.textarea || ''}`,
+    className: `form__group__textarea ${className?.textarea || ''}`,
   }
   const inputProps = {
     ...commonProps,
     defaultValue: defaultValue || ``,
     defaultChecked: defaultValue,
-    className: `form__grupo__input ${className?.input || ''}`
+    className: `form__group__input ${className?.input || ''}`
   }
   const checkBox = {
     ...commonProps,
     defaultChecked: defaultValue || false,
-    className: `form__grupo__input ${className?.input || ''}`
+    className: `form__group__input ${className?.input || ''}`
   }
 
   if(type === 'checkbox') return (
-    <div className={`form__grupo`}>
+    <div className={`form__group`}>
       <label {...labelProps} >{label}</label>
       <input {...checkBox}/>
     </div>
   )
   return(
-    <div className={`form__grupo ${className?.grupo || ''}`}>
+    <div className={`form__group ${className?.group || ''}`}>
       <label {...labelProps} >{label}</label>
       {
         type === 'textarea' 

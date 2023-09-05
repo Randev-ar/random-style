@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Footer = () => {
-    const linkedin = process.env.REACT_APP_SOCIAL_LINKEDING
+    const linkedin = process.env.REACT_APP_SOCIAL_LINKEDIN
     const facebook = process.env.REACT_APP_SOCIAL_FACEBOOK
     const github = process.env.REACT_APP_SOCIAL_GITHUB
     const instagram = process.env.REACT_APP_SOCIAL_INSTAGRAM

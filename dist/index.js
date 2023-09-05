@@ -321,24 +321,24 @@ const FormInput = ({
   const textAreaProps = {
     ...commonProps,
     defaultValue: defaultValue || ``,
-    className: `form__grupo__textarea ${className?.textarea || ''}`
+    className: `form__group__textarea ${className?.textarea || ''}`
   };
   const inputProps = {
     ...commonProps,
     defaultValue: defaultValue || ``,
     defaultChecked: defaultValue,
-    className: `form__grupo__input ${className?.input || ''}`
+    className: `form__group__input ${className?.input || ''}`
   };
   const checkBox = {
     ...commonProps,
     defaultChecked: defaultValue || false,
-    className: `form__grupo__input ${className?.input || ''}`
+    className: `form__group__input ${className?.input || ''}`
   };
   if (type === 'checkbox') return /*#__PURE__*/React.createElement("div", {
-    className: `form__grupo`
+    className: `form__group`
   }, /*#__PURE__*/React.createElement("label", labelProps, label), /*#__PURE__*/React.createElement("input", checkBox));
   return /*#__PURE__*/React.createElement("div", {
-    className: `form__grupo ${className?.grupo || ''}`
+    className: `form__group ${className?.grupo || ''}`
   }, /*#__PURE__*/React.createElement("label", labelProps, label), type === 'textarea' ? /*#__PURE__*/React.createElement("textarea", textAreaProps) : /*#__PURE__*/React.createElement("input", inputProps));
 };
 
@@ -379,7 +379,7 @@ const FormSelect = ({
     defaultValue: defaultValue || ``,
     name: name || '',
     id: id || '',
-    className: `form__grupo__textarea p--1 ${className?.select || ''}`,
+    className: `form__group__textarea p--1 ${className?.select || ''}`,
     disabled,
     onChange,
     value,
@@ -387,7 +387,7 @@ const FormSelect = ({
     multiple
   };
   return /*#__PURE__*/React.createElement("div", {
-    className: "form__grupo"
+    className: "form__group"
   }, /*#__PURE__*/React.createElement("label", labelProps, " ", label, " "), /*#__PURE__*/React.createElement("select", selectProps, !defaultValue && /*#__PURE__*/React.createElement("option", {
     className: "m--1",
     defaultValue: true,

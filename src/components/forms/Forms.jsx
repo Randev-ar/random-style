@@ -67,9 +67,9 @@ const Input = ({ name, label, value, type, placeholder, expresionRegular, leyend
                 className={`form__label${valid}`} htmlFor={name}> {label}
             </label>
 
-            <div className="form__grupo">
+            <div className="form__group">
                 <input 
-                    className={`form__grupo__input${valid}`}
+                    className={`form__group__input${valid}`}
                     type={type} 
                     id={name} 
                     name={name} 
@@ -79,8 +79,8 @@ const Input = ({ name, label, value, type, placeholder, expresionRegular, leyend
                     onKeyUp={validacion}
                     onBlur={validacion}/>
                     
-                <i className={`fas fa-check-circle form__grupo__icono__success`}    style={{'display':`${success}`}}></i>
-                <i className={`fas fa-times-circle form__grupo__icono__error`}      style={{'display':`${error}`}}></i>
+                <i className={`fas fa-check-circle form__group__icono__success`}    style={{'display':`${success}`}}></i>
+                <i className={`fas fa-times-circle form__group__icono__error`}      style={{'display':`${error}`}}></i>
             </div>
 
             {empty && <p className={`form__leyenda--error`}>{leyendaError}</p>}
@@ -97,8 +97,8 @@ const Select = ({ name, label, value, children}) => {
                 className="form__label" htmlFor={name}> {label}
             </label>
 
-            <div className="form__grupo">
-                <select className="form__grupo__input"  
+            <div className="form__group">
+                <select className="form__group__input"  
                 id={name} name={name} value={current} onChange={ e => setCurrent(e.target.value) }>
 
                     {children}
@@ -129,9 +129,9 @@ const Textarea = ({ name, label, value, type, placeholder, rows}) => {
                 className={`form__label`} htmlFor={name}> {label}
             </label>
 
-            <div className="form__grupo">
+            <div className="form__group">
                 <textarea 
-                    className={`form__grupo__textarea`}
+                    className={`form__group__textarea`}
                     type={type} 
                     id={name} 
                     name={name} 
