@@ -1,4 +1,4 @@
-import Breadcrum from './Breadcrum'
+import Breadcrumb from './Breadcrumb'
 import Footer from './Footer'
 // import Forms from './Forms'
 import Modal from './Modal'
@@ -8,7 +8,7 @@ import Slideshow from './Slideshow'
 import Spinner from './Spinner'
 
 export {
-    Breadcrum,
+    Breadcrumb,
     Footer,
     Modal,
     Navbar,

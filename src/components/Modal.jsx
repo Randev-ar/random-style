@@ -1,23 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
 const Modal = (props) => {
-    let { visible, children, onClose, bgClose, className, style } = props;
+    let { visible, children, onClose, bgClose, className, style, overlayStyle } = props;
+    const onModalClick = (e) => e.stopPropagation()
+    const onCloseHandler = () => onClose && onClose()
+    const onBgClick = () => bgClose && onCloseHandler();
 
-    const onModalClick = (e) => {
-        e.stopPropagation();
-    }
-
-    const onCloseHandler = () => {
-        onClose && onClose();
-    };
-
-    const onBgClick = () => {
-        bgClose && onCloseHandler();
-    }
-
-    return visible?(
-
-        <div className={"modal__overlay "}  onClick={onBgClick}>
+    if (visible) return (
+        <div className={"modal__overlay "} onClick={onBgClick} overlayStyle={overlayStyle}>
             <div className={`modal ${className}`} onClick={onModalClick} style={style}>
                 <div className={'modal__header'}>
                     <button className={"modal__closeBtn"} onClick={onCloseHandler}><i className="fas fa-times"></i></button>
@@ -27,29 +17,28 @@ const Modal = (props) => {
                 </div>
             </div>
         </div>
-        
-    ) :
-    null;
+    )
+    return <></>
 }
 
-const ModalButtonWrapper = ({buttonText, children, className, bgClose, open, classNameModal, alCerrar, toggleOpen, setToggleOpen }) => {
+const ModalButtonWrapper = ({ buttonText, children, className, bgClose, open, classNameModal, alCerrar, toggleOpen, setToggleOpen }) => {
     const [visible, setVisible] = useState(false);
     const [classNameM, setclassNameM] = useState('')
 
     useEffect(() => {
-        toggleOpen !== null &&  setVisible(toggleOpen)
+        toggleOpen !== null && setVisible(toggleOpen)
         setToggleOpen && setToggleOpen(null)
     }, [toggleOpen, setToggleOpen])
-    
+
     useEffect(() => {
-        open&& setVisible(true)
-        classNameModal&& setclassNameM(classNameModal)
+        open && setVisible(true)
+        classNameModal && setclassNameM(classNameModal)
     }, [open, classNameModal])
-    
+
     const onButtonClick = () => setVisible(true);
 
     const onClose = () => {
-        open=false
+        open = false
         setVisible(false);
         alCerrar && alCerrar()
     };

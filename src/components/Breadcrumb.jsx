@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react'
-import { 
-    NavLink, 
+import {
+    NavLink,
     useLocation
 } from 'react-router-dom'
 
 const Breadcrumb = () => {
     let location = useLocation();
     const [pathName, setPathName] = useState(null)
-    let route= ''
+    let route = ''
 
     useEffect(() => {
         let isMounted = true;
-        if( isMounted ){
-            location.pathname!=='/' ?
-            setPathName(location.pathname.split('/'))
-            :
-            setPathName([''])
+        if (isMounted) {
+            location.pathname !== '/' ?
+                setPathName(location.pathname.split('/'))
+                :
+                setPathName([''])
         }
         return () => { isMounted = false }
     }, [location])
@@ -23,12 +23,12 @@ const Breadcrumb = () => {
         <nav className="breadcrumb">
             <ol className="conteiner breadcrumb__list">
                 {
-                    pathName?.map( path => {
-                        if(path!==''){route=`${route}/${path}`}
-                        return(
-                            <li className="breadcrumb__list__item" key={`path${path}`}>
-                               { path==='' && <NavLink to="/">Home</NavLink>}
-                               { path!=='' && <NavLink to={`${route}`}>/ {path.replaceAll('-', ' ')}</NavLink>}
+                    pathName?.map(path => {
+                        if (path !== '') { route = `${route}/${path}` }
+                        return (
+                            <li className="breadcrumb__list__item ms--1" key={`path${path}`}>
+                                {path === '' && <NavLink to="/">Home</NavLink>}
+                                {path !== '' && <NavLink to={`${route}`}>/ {path.replaceAll('-', ' ')}</NavLink>}
                             </li>
                         )
                     })
