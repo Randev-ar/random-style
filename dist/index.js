@@ -3,23 +3,23 @@
 var React = require('react');
 var reactRouterDom = require('react-router-dom');
 
-const Breadcrumb = () => {
+const Breadcrumb = ({
+  customPathName
+}) => {
   let location = reactRouterDom.useLocation();
-  const [pathName, setPathName] = React.useState(null);
+  const [pathName, setPathName] = React.useState(customPathName || null);
   let route = '';
   React.useEffect(() => {
-    let isMounted = true;
-    if (isMounted) {
+    const ctrl = new AbortController();
+    if (!customPathName) {
       location.pathname !== '/' ? setPathName(location.pathname.split('/')) : setPathName(['']);
     }
-    return () => {
-      isMounted = false;
-    };
+    return () => ctrl.abort();
   }, [location]);
   return /*#__PURE__*/React.createElement("nav", {
     className: "breadcrumb"
   }, /*#__PURE__*/React.createElement("ol", {
-    className: "conteiner breadcrumb__list"
+    className: "container breadcrumb__list"
   }, pathName?.map(path => {
     if (path !== '') {
       route = `${route}/${path}`;
@@ -174,13 +174,14 @@ const Modal = props => {
     bgClose,
     className,
     style,
-    overlayStyle
+    overlayStyle,
+    overlayClassName
   } = props;
   const onModalClick = e => e.stopPropagation();
   const onCloseHandler = () => onClose && onClose();
   const onBgClick = () => bgClose && onCloseHandler();
   if (visible) return /*#__PURE__*/React.createElement("div", {
-    className: "modal__overlay ",
+    className: `modal__overlay ${overlayClassName}`,
     onClick: onBgClick,
     overlayStyle: overlayStyle
   }, /*#__PURE__*/React.createElement("div", {
@@ -211,14 +212,14 @@ const ModalButtonWrapper = ({
   setToggleOpen
 }) => {
   const [visible, setVisible] = React.useState(false);
-  const [classNameM, setclassNameM] = React.useState('');
+  const [classNameM, setClassNameM] = React.useState('');
   React.useEffect(() => {
     toggleOpen !== null && setVisible(toggleOpen);
     setToggleOpen && setToggleOpen(null);
   }, [toggleOpen, setToggleOpen]);
   React.useEffect(() => {
     open && setVisible(true);
-    classNameModal && setclassNameM(classNameModal);
+    classNameModal && setClassNameM(classNameModal);
   }, [open, classNameModal]);
   const onButtonClick = () => setVisible(true);
   const onClose = () => {

@@ -9,12 +9,12 @@ import React, { useEffect, useRef } from 'react';
 </a>
 */
 
-const Slideshow = ({children}) => {
+const Slideshow = ({ children }) => {
     const slideshow = useRef(null);
-    const intervaloSlideshow = useRef(null)
+    const slideshowInterval = useRef(null)
 
-    const siguiente = () => {
-        if(slideshow.current?.children.length>0){
+    const next = () => {
+        if (slideshow.current?.children.length > 0) {
             const firstElement = slideshow.current?.children[0];
             slideshow.current.style.transition = `5000ms ease-out all`;
             const slideSize = slideshow.current?.children[0].offsetWidth;
@@ -32,12 +32,12 @@ const Slideshow = ({children}) => {
 
         }
     }
-    const anterior = () => {
-        if(slideshow.current.children.length>0){
-            
+    const prev = () => {
+        if (slideshow.current.children.length > 0) {
+
             const index = slideshow.current.children.length - 1;
             const lastElement = slideshow.current.children[index];
-            slideshow.current.insertBefore(lastElement, slideshow.current.firstChild )
+            slideshow.current.insertBefore(lastElement, slideshow.current.firstChild)
 
             slideshow.current.style.transition = 'none';
 
@@ -48,23 +48,23 @@ const Slideshow = ({children}) => {
             setTimeout(() => {
                 slideshow.current.style.transition = `5000ms ease-out all`;
                 slideshow.current.style.transform = 'translateX(0)';
-            }, 30); 
+            }, 30);
 
         }
     }
 
     useEffect(() => {
-        intervaloSlideshow.current =  setInterval(() => {
-            siguiente();
+        slideshowInterval.current = setInterval(() => {
+            next();
         }, 5000)
 
         slideshow.current.addEventListener('mouseenter', () => {
-            clearInterval(intervaloSlideshow.current)
+            clearInterval(slideshowInterval.current)
         })
         slideshow.current.addEventListener('mouseleave', () => {
-            
-            intervaloSlideshow.current =  setInterval(() => {
-                siguiente();
+
+            slideshowInterval.current = setInterval(() => {
+                next();
             }, 5000)
         })
         return
@@ -72,20 +72,18 @@ const Slideshow = ({children}) => {
 
     return (
         <div className='slider--auto'>
-
             <div className='slideshow' ref={slideshow}>
                 {children}
             </div>
 
             <div className='slide__controls'>
-                <button className='slide__button' onClick={anterior}>
+                <button className='slide__button' onClick={prev}>
                     <i className="fas fa-chevron-left"></i>
                 </button>
-                <button  className='slide__button' onClick={siguiente}>
+                <button className='slide__button' onClick={next}>
                     <i className="fas fa-chevron-right"></i>
                 </button>
             </div>
-
         </div>
     )
 }

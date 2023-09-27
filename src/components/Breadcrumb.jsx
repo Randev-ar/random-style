@@ -4,29 +4,29 @@ import {
     useLocation
 } from 'react-router-dom'
 
-const Breadcrumb = () => {
+const Breadcrumb = ({ customPathName }) => {
     let location = useLocation();
-    const [pathName, setPathName] = useState(null)
+    const [pathName, setPathName] = useState(customPathName || null)
     let route = ''
 
     useEffect(() => {
-        let isMounted = true;
-        if (isMounted) {
-            location.pathname !== '/' ?
-                setPathName(location.pathname.split('/'))
-                :
-                setPathName([''])
+        const ctrl = new AbortController()
+        if (!customPathName) {
+            location.pathname !== '/'
+                ? setPathName(location.pathname.split('/'))
+                : setPathName([''])
         }
-        return () => { isMounted = false }
+        return () => ctrl.abort()
     }, [location])
+
     return (
         <nav className="breadcrumb">
-            <ol className="conteiner breadcrumb__list">
+            <ol className="container breadcrumb__list">
                 {
                     pathName?.map(path => {
                         if (path !== '') { route = `${route}/${path}` }
                         return (
-                            <li className="breadcrumb__list__item ms--1" key={`path${path}`}>
+                            <li className="breadcrumb__list__item" key={`path${path}`}>
                                 {path === '' && <NavLink to="/">Home</NavLink>}
                                 {path !== '' && <NavLink to={`${route}`}>/ {path.replaceAll('-', ' ')}</NavLink>}
                             </li>

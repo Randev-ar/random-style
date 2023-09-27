@@ -1,6 +1,6 @@
 {
   "name": "random-style",
-  "version": "0.0.9",
+  "version": "0.0.12",
   "description": "Stylesheet && React components",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -16,7 +16,14 @@
     "start": "webpack --watch",
     "build-lib": "rollup -c",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "release": "release-it",
+    "release:major": "release-it --major --git.tagExclude='*[-]*'",
+    "release:minor": "release-it --minor --git.tagExclude='*[-]*'",
+    "release:patch": "release-it --patch --git.tagExclude='*[-]*'",
+    "release:premajor": "release-it premajor --preRelease --github.preRelease --git.tagExclude='*[-]*'",
+    "release:preminor": "release-it preminor --preRelease --github.preRelease --git.tagExclude='*[-]*'",
+    "release:prepatch": "release-it prepatch --preRelease --github.preRelease --git.tagExclude='*[-]*'"
   },
   "repository": {
     "type": "git",

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
 const Modal = (props) => {
-    let { visible, children, onClose, bgClose, className, style, overlayStyle } = props;
+    let { visible, children, onClose, bgClose, className, style, overlayStyle, overlayClassName } = props;
     const onModalClick = (e) => e.stopPropagation()
     const onCloseHandler = () => onClose && onClose()
     const onBgClick = () => bgClose && onCloseHandler();
 
     if (visible) return (
-        <div className={"modal__overlay "} onClick={onBgClick} overlayStyle={overlayStyle}>
+        <div className={`modal__overlay ${overlayClassName}`} onClick={onBgClick} overlayStyle={overlayStyle}>
             <div className={`modal ${className}`} onClick={onModalClick} style={style}>
                 <div className={'modal__header'}>
                     <button className={"modal__closeBtn"} onClick={onCloseHandler}><i className="fas fa-times"></i></button>
@@ -23,7 +23,7 @@ const Modal = (props) => {
 
 const ModalButtonWrapper = ({ buttonText, children, className, bgClose, open, classNameModal, alCerrar, toggleOpen, setToggleOpen }) => {
     const [visible, setVisible] = useState(false);
-    const [classNameM, setclassNameM] = useState('')
+    const [classNameM, setClassNameM] = useState('')
 
     useEffect(() => {
         toggleOpen !== null && setVisible(toggleOpen)
@@ -32,7 +32,7 @@ const ModalButtonWrapper = ({ buttonText, children, className, bgClose, open, cl
 
     useEffect(() => {
         open && setVisible(true)
-        classNameModal && setclassNameM(classNameModal)
+        classNameModal && setClassNameM(classNameModal)
     }, [open, classNameModal])
 
     const onButtonClick = () => setVisible(true);
