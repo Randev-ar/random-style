@@ -3,7 +3,7 @@
 var React = require('react');
 var reactRouterDom = require('react-router-dom');
 
-const Breadcrum = () => {
+const Breadcrumb = () => {
   let location = reactRouterDom.useLocation();
   const [pathName, setPathName] = React.useState(null);
   let route = '';
@@ -25,7 +25,7 @@ const Breadcrum = () => {
       route = `${route}/${path}`;
     }
     return /*#__PURE__*/React.createElement("li", {
-      className: "breadcrumb__list__item",
+      className: "breadcrumb__list__item ms--1",
       key: `path${path}`
     }, path === '' && /*#__PURE__*/React.createElement(reactRouterDom.NavLink, {
       to: "/"
@@ -36,7 +36,7 @@ const Breadcrum = () => {
 };
 
 const Footer = () => {
-  const linkedin = process.env.REACT_APP_SOCIAL_LINKEDING;
+  const linkedin = process.env.REACT_APP_SOCIAL_LINKEDIN;
   const facebook = process.env.REACT_APP_SOCIAL_FACEBOOK;
   const github = process.env.REACT_APP_SOCIAL_GITHUB;
   const instagram = process.env.REACT_APP_SOCIAL_INSTAGRAM;
@@ -100,7 +100,7 @@ const Footer = () => {
     className: "color--primary"
   }, "ran"), /*#__PURE__*/React.createElement("span", {
     className: "color--secondary"
-  }, "dev"))), /*#__PURE__*/React.createElement("br", null), "\xA92021 - Random Development")));
+  }, "dev"))), /*#__PURE__*/React.createElement("br", null), "\xA92023 - Random Development")));
 };
 
 const Spinner = () => {
@@ -116,7 +116,7 @@ const Sidebar = ({
   style,
   navList
 }) => {
-  let titulo = process.env.REACT_APP_WEBSITE_NAME;
+  let title = process.env.REACT_APP_WEBSITE_NAME;
   const [active, setActive] = React.useState(false);
   return /*#__PURE__*/React.createElement("aside", {
     className: `sidebar ${active && 'active'}  ${user === null && 'd--none'}`,
@@ -126,9 +126,9 @@ const Sidebar = ({
   }, /*#__PURE__*/React.createElement("div", {
     className: "logo",
     style: style && style.logo
-  }, titulo && /*#__PURE__*/React.createElement("div", {
+  }, title && /*#__PURE__*/React.createElement("div", {
     className: "logoname"
-  }, titulo)), /*#__PURE__*/React.createElement("i", {
+  }, title)), /*#__PURE__*/React.createElement("i", {
     className: "fa-solid fa-bars",
     id: "btn",
     onClick: () => setActive(!active)
@@ -173,20 +173,16 @@ const Modal = props => {
     onClose,
     bgClose,
     className,
-    style
+    style,
+    overlayStyle
   } = props;
-  const onModalClick = e => {
-    e.stopPropagation();
-  };
-  const onCloseHandler = () => {
-    onClose && onClose();
-  };
-  const onBgClick = () => {
-    bgClose && onCloseHandler();
-  };
-  return visible ? /*#__PURE__*/React.createElement("div", {
+  const onModalClick = e => e.stopPropagation();
+  const onCloseHandler = () => onClose && onClose();
+  const onBgClick = () => bgClose && onCloseHandler();
+  if (visible) return /*#__PURE__*/React.createElement("div", {
     className: "modal__overlay ",
-    onClick: onBgClick
+    onClick: onBgClick,
+    overlayStyle: overlayStyle
   }, /*#__PURE__*/React.createElement("div", {
     className: `modal ${className}`,
     onClick: onModalClick,
@@ -200,7 +196,8 @@ const Modal = props => {
     className: "fas fa-times"
   }))), /*#__PURE__*/React.createElement("div", {
     className: 'modal__body'
-  }, children))) : null;
+  }, children)));
+  return /*#__PURE__*/React.createElement(React.Fragment, null);
 };
 const ModalButtonWrapper = ({
   buttonText,
@@ -321,24 +318,24 @@ const FormInput = ({
   const textAreaProps = {
     ...commonProps,
     defaultValue: defaultValue || ``,
-    className: `form__grupo__textarea ${className?.textarea || ''}`
+    className: `form__group__textarea ${className?.textarea || ''}`
   };
   const inputProps = {
     ...commonProps,
     defaultValue: defaultValue || ``,
     defaultChecked: defaultValue,
-    className: `form__grupo__input ${className?.input || ''}`
+    className: `form__group__input ${className?.input || ''}`
   };
   const checkBox = {
     ...commonProps,
     defaultChecked: defaultValue || false,
-    className: `form__grupo__input ${className?.input || ''}`
+    className: `form__group__input ${className?.input || ''}`
   };
   if (type === 'checkbox') return /*#__PURE__*/React.createElement("div", {
-    className: `form__grupo`
+    className: `form__group`
   }, /*#__PURE__*/React.createElement("label", labelProps, label), /*#__PURE__*/React.createElement("input", checkBox));
   return /*#__PURE__*/React.createElement("div", {
-    className: `form__grupo ${className?.grupo || ''}`
+    className: `form__group ${className?.group || ''}`
   }, /*#__PURE__*/React.createElement("label", labelProps, label), type === 'textarea' ? /*#__PURE__*/React.createElement("textarea", textAreaProps) : /*#__PURE__*/React.createElement("input", inputProps));
 };
 
@@ -379,7 +376,7 @@ const FormSelect = ({
     defaultValue: defaultValue || ``,
     name: name || '',
     id: id || '',
-    className: `form__grupo__textarea p--1 ${className?.select || ''}`,
+    className: `form__group__textarea p--1 ${className?.select || ''}`,
     disabled,
     onChange,
     value,
@@ -387,7 +384,7 @@ const FormSelect = ({
     multiple
   };
   return /*#__PURE__*/React.createElement("div", {
-    className: "form__grupo"
+    className: "form__group"
   }, /*#__PURE__*/React.createElement("label", labelProps, " ", label, " "), /*#__PURE__*/React.createElement("select", selectProps, !defaultValue && /*#__PURE__*/React.createElement("option", {
     className: "m--1",
     defaultValue: true,
@@ -434,7 +431,7 @@ const Navbar = ({
   })));
 };
 
-exports.Breadcrum = Breadcrum;
+exports.Breadcrumb = Breadcrumb;
 exports.Footer = Footer;
 exports.FormInput = FormInput;
 exports.FormSelect = FormSelect;

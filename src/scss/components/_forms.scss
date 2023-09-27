@@ -21,14 +21,14 @@ form * {
   .form__item {
     width: 100%;
   }
-  .form__grupo {
+  .form__group {
     position: relative;
     z-index: 1;
 
-    .form__grupo__textarea,
-    .form__grupo__input,
-    .form__grupo__input--error,
-    .form__grupo__input--success {
+    .form__group__textarea,
+    .form__group__input,
+    .form__group__input--error,
+    .form__group__input--success {
       width: 100%;
       background: #fff;
       border-radius: 3px;
@@ -43,24 +43,24 @@ form * {
         box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
       }
     }
-    .form__grupo__textarea {
+    .form__group__textarea {
       height: unset;
       resize: none;
     }
-    .form__grupo__input--success {
+    .form__group__input--success {
       border: 3px solid $success;
       color: $success;
     }
-    .form__grupo__input--error {
+    .form__group__input--error {
       border: 3px solid $error;
       color: $error;
     }
-    .form__grupo__icono__s,
-    .form__grupo__icono__e,
-    .form__grupo__icono__s--error,
-    .form__grupo__icono__e--success,
-    .form__grupo__icono__s--success,
-    .form__grupo__icono__e--error {
+    .form__group__icono__s,
+    .form__group__icono__e,
+    .form__group__icono__s--error,
+    .form__group__icono__e--success,
+    .form__group__icono__s--success,
+    .form__group__icono__e--error {
       position: absolute;
       right: 10px;
       bottom: 14px;
@@ -68,11 +68,11 @@ form * {
       font-size: 16px;
       opacity: 0;
     }
-    .form__grupo__icono__s--success {
+    .form__group__icono__s--success {
       color: $success;
       opacity: 1;
     }
-    .form__grupo__icono__e--error {
+    .form__group__icono__e--error {
       color: $error;
       opacity: 1;
     }

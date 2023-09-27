@@ -1459,13 +1459,13 @@ form * {
     cursor: pointer; }
   .form .form__item {
     width: 100%; }
-  .form .form__grupo {
+  .form .form__group {
     position: relative;
     z-index: 1; }
-    .form .form__grupo .form__grupo__textarea,
-    .form .form__grupo .form__grupo__input,
-    .form .form__grupo .form__grupo__input--error,
-    .form .form__grupo .form__grupo__input--success {
+    .form .form__group .form__group__textarea,
+    .form .form__group .form__group__input,
+    .form .form__group .form__group__input--error,
+    .form .form__group .form__group__input--success {
       width: 100%;
       background: #fff;
       border-radius: 3px;
@@ -1474,38 +1474,38 @@ form * {
       padding: 0 40px 0 10px;
       transition: 0.3s ease all;
       border: 3px solid transparent; }
-      .form .form__grupo .form__grupo__textarea:focus,
-      .form .form__grupo .form__grupo__input:focus,
-      .form .form__grupo .form__grupo__input--error:focus,
-      .form .form__grupo .form__grupo__input--success:focus {
+      .form .form__group .form__group__textarea:focus,
+      .form .form__group .form__group__input:focus,
+      .form .form__group .form__group__input--error:focus,
+      .form .form__group .form__group__input--success:focus {
         border: 3px solid var(--terciary);
         outline: none;
         box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4); }
-    .form .form__grupo .form__grupo__textarea {
+    .form .form__group .form__group__textarea {
       height: unset;
       resize: none; }
-    .form .form__grupo .form__grupo__input--success {
+    .form .form__group .form__group__input--success {
       border: 3px solid var(--success);
       color: var(--success); }
-    .form .form__grupo .form__grupo__input--error {
+    .form .form__group .form__group__input--error {
       border: 3px solid var(--error);
       color: var(--error); }
-    .form .form__grupo .form__grupo__icono__s,
-    .form .form__grupo .form__grupo__icono__e,
-    .form .form__grupo .form__grupo__icono__s--error,
-    .form .form__grupo .form__grupo__icono__e--success,
-    .form .form__grupo .form__grupo__icono__s--success,
-    .form .form__grupo .form__grupo__icono__e--error {
+    .form .form__group .form__group__icono__s,
+    .form .form__group .form__group__icono__e,
+    .form .form__group .form__group__icono__s--error,
+    .form .form__group .form__group__icono__e--success,
+    .form .form__group .form__group__icono__s--success,
+    .form .form__group .form__group__icono__e--error {
       position: absolute;
       right: 10px;
       bottom: 14px;
       z-index: 100;
       font-size: 16px;
       opacity: 0; }
-    .form .form__grupo .form__grupo__icono__s--success {
+    .form .form__group .form__group__icono__s--success {
       color: var(--success);
       opacity: 1; }
-    .form .form__grupo .form__grupo__icono__e--error {
+    .form .form__group .form__group__icono__e--error {
       color: var(--error);
       opacity: 1; }
   .form .form__leyenda--error {

@@ -4,7 +4,7 @@ import userImg from '../../assets/guest.webp'; */
 import { NavLink } from 'react-router-dom';
 
 const Sidebar = ({ user, logout, rol, style, navList }) => {
-    let titulo   = process.env.REACT_APP_WEBSITE_NAME;
+    let title   = process.env.REACT_APP_WEBSITE_NAME;
     const [active, setActive] = useState(false);
 
     return (
@@ -13,7 +13,7 @@ const Sidebar = ({ user, logout, rol, style, navList }) => {
             <div className="logo_content" >
                 <div className="logo" style={ style && style.logo }>
                     {/* <img src={ style?.logo?.src || logo} className="logoname" alt="logo"  style={{maxWidth: '10rem', maxHeight: '49px'}}/> */}
-                    {titulo && <div className="logoname">{titulo}</div>}
+                    {title && <div className="logoname">{title}</div>}
                 </div>
                 <i className="fa-solid fa-bars" id='btn' onClick={() => setActive(!active)}></i>
             </div>

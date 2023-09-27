@@ -1,4 +1,4 @@
-import Breadcrum from './components/Breadcrum.jsx'
+import Breadcrumb from './components/Breadcrumb.jsx'
 import Footer from './components/Footer.jsx'
 import Spinner from './components/Spinner.jsx'
 import Sidebar from './components/Sidebar.jsx'
@@ -9,7 +9,7 @@ import FormSelect from './components/forms/FormSelect.jsx'
 import Navbar from './components/Navbar.jsx'
 
 export {
-    Breadcrum,
+    Breadcrumb,
     Footer,
     Spinner,
     Sidebar,
