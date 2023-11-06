@@ -21,7 +21,7 @@ const Breadcrumb = () => {
     }, [location])
     return (
         <nav className="breadcrumb">
-            <ol className="conteiner breadcrumb__list">
+            <ol className="container breadcrumb__list">
                 {
                     pathName?.map(path => {
                         if (path !== '') { route = `${route}/${path}` }

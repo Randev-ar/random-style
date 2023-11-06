@@ -2,6 +2,7 @@
   margin: auto;
   background-color: $background;
   width: 100%;
+
   .slider__body {
     margin: 0;
     padding: 0;
@@ -9,6 +10,7 @@
     position: relative;
     width: inherit;
     height: 300px;
+
     li {
       position: absolute;
       background-color: $background;
@@ -18,19 +20,23 @@
       width: inherit;
       height: inherit;
       transition: opacity 0.5s;
+
       img {
         width: 100%;
         height: 300px;
         object-fit: cover;
       }
+
       &:first-child {
         opacity: 1;
       }
+
       &:target {
         opacity: 1;
       }
     }
   }
+
   .slider__menu {
     margin: 0;
     padding: 0;
@@ -38,6 +44,7 @@
     text-align: center;
     margin-top: 1rem;
     width: inherit;
+
     li {
       display: inline-block;
       text-align: center;
@@ -48,12 +55,14 @@
       font-size: 20px;
       border-radius: 100%;
       margin-right: 3px;
+
       a {
         display: inline-block;
         color: white;
         text-decoration: none;
         text-align: center;
       }
+
       &:last-of-type {
         margin-right: 0;
       }
@@ -64,21 +73,24 @@
 .slider--auto {
   position: relative;
   overflow: hidden;
-  min-height: 50%;
+  height: 100%;
 
   .slideshow {
     display: flex;
     flex-wrap: nowrap;
+
     .slide {
       width: 100%;
       transition: 0.3s ease all;
       z-index: 1;
       position: relative;
-      min-height: 50%;
+      height: 100%;
+
       img {
         width: 100%;
         object-fit: cover;
         vertical-align: top;
+        height: 100%;
       }
 
       .slide__text {
@@ -114,6 +126,7 @@
       transition: 0.3s ease all;
       left: 0;
       z-index: 1;
+
       &:last-of-type {
         left: unset;
         right: 0;

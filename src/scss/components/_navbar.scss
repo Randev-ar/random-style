@@ -1,11 +1,11 @@
-.navbar--faqstyle {
+.navbar {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  background:rgba(0, 0, 0, 0.9);
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 
   .navbar__brand {
     .navbar__link {
@@ -17,6 +17,7 @@
       padding: 5px 30px;
       transition: 0.3s ease all;
       font-size: 30px;
+
       &:hover {
         color: $secondary;
       }
@@ -42,9 +43,11 @@
       padding: 15px 25px;
       transition: 0.3s ease all;
       font-size: 20px;
+
       &:hover {
         background-color: $secondary;
       }
+
       &.active {
         background-color: $terciary;
       }
@@ -63,8 +66,10 @@
     display: none;
   }
 }
+
 /* Moviles Chicos */
 @media (max-width: $sm_min-device-width) {
+
   /* 
   navbar__linkgroup{
     
@@ -73,7 +78,7 @@
   }
   adn (orientation: landscape)
   */
-  .navbar--faqstyle {
+  .navbar {
     height: 65px;
     width: 100%;
 
@@ -87,6 +92,7 @@
         padding: 5px 30px;
         transition: 0.3s ease all;
         font-size: 30px;
+
         &:hover {
           color: $secondary;
         }
@@ -110,9 +116,11 @@
 
       .navbar__link {
         padding: 0 0;
+
         &:hover {
           background-color: $secondary;
         }
+
         &.active {
           background-color: $terciary;
         }
@@ -124,8 +132,10 @@
     }
   }
 }
+
 /* Moviles Grandes */
 @media (min-width: $sm_min-device-width) and (max-width: $sm_max-device-width) {
+
   /* 
   navbar__linkgroup{
     
@@ -134,7 +144,7 @@
   }
   adn (orientation: landscape)
   */
-  .navbar--faqstyle {
+  .navbar {
     height: 65px;
 
     .navbar__brand {
@@ -147,6 +157,7 @@
         padding: 5px 30px;
         transition: 0.3s ease all;
         font-size: 30px;
+
         &:hover {
           color: $secondary;
         }
@@ -172,6 +183,7 @@
         &:hover {
           background-color: $secondary;
         }
+
         &.active {
           background-color: $terciary;
         }
@@ -183,9 +195,10 @@
     }
   }
 }
+
 /* Tablets */
 @media (min-width: $med_min-device-width) and (max-width: $med_max-device-width) {
-  .navbar--faqstyle {
+  .navbar {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -202,6 +215,7 @@
         padding: 5px 30px;
         transition: 0.3s ease all;
         font-size: 20px;
+
         &:hover {
           color: $secondary;
         }
@@ -224,9 +238,11 @@
         padding: 15px 10px;
         transition: 0.3s ease all;
         font-size: 15px;
+
         &:hover {
           background-color: $secondary;
         }
+
         &.active {
           background-color: $terciary;
         }
@@ -242,9 +258,10 @@
     }
   }
 }
+
 /* Pequeños Monitores */
 @media (min-width: $larg_min-device-width) and (max-width: $larg_max-device-width) {
-  .navbar--faqstyle {
+  .navbar {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -261,6 +278,7 @@
         padding: 5px 30px;
         transition: 0.3s ease all;
         font-size: 30px;
+
         &:hover {
           color: $secondary;
         }
@@ -286,9 +304,11 @@
         padding: 15px 25px;
         transition: 0.3s ease all;
         font-size: 20px;
+
         &:hover {
           background-color: $secondary;
         }
+
         &.active {
           background-color: $terciary;
         }
@@ -308,9 +328,10 @@
     }
   }
 }
+
 /* Resto */
 @media (min-width: $xl_min-device-width) {
-  .navbar--faqstyle {
+  .navbar {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -327,6 +348,7 @@
         padding: 5px 30px;
         transition: 0.3s ease all;
         font-size: 30px;
+
         &:hover {
           color: $secondary;
         }
@@ -352,9 +374,11 @@
         padding: 15px 25px;
         transition: 0.3s ease all;
         font-size: 20px;
+
         &:hover {
           background-color: $secondary;
         }
+
         &.active {
           background-color: $terciary;
         }

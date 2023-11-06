@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 
-const Navbar = ({src, titulo, list}) => {
+const Navbar = ({ src, title, list }) => {
     const [show, setShow] = useState('')
     return (
-        <nav className="navbar--faqstyle">
+        <nav className="navbar">
             <label className='navbar__brand'>
-                <img src={src} className="logoname" alt="logo"  style={{maxWidth: '10rem'}}/>
-                <p className="navbar__link">{titulo}</p>
+                <img src={src} className="logo_name" alt="logo" style={{ maxWidth: '10rem' }} />
+                <p className="navbar__link">{title}</p>
             </label>
             <ul className={`navbar__linkGroup ${show}`}>
                 {list}
             </ul>
-            <span className='navbar__btn' onClick={() => show===''?setShow('show'):setShow('')}>
+            <span className='navbar__btn' onClick={() => show === '' ? setShow('show') : setShow('')}>
                 <i className="fas fa-bars"></i>
             </span>
         </nav>
