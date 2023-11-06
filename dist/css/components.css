@@ -1483,7 +1483,7 @@ form * {
     background-color: rgba(1, 1, 1, 0);
     box-shadow: none; }
 
-.navbar--faqstyle {
+.navbar {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -1491,7 +1491,7 @@ form * {
   margin: 0 auto;
   background: rgba(0, 0, 0, 0.9);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); }
-  .navbar--faqstyle .navbar__brand .navbar__link {
+  .navbar .navbar__brand .navbar__link {
     color: #fff;
     text-decoration: none;
     display: flex;
@@ -1500,9 +1500,9 @@ form * {
     padding: 5px 30px;
     transition: 0.3s ease all;
     font-size: 30px; }
-    .navbar--faqstyle .navbar__brand .navbar__link:hover {
+    .navbar .navbar__brand .navbar__link:hover {
       color: var(--secondary); }
-  .navbar--faqstyle .navbar__linkGroup {
+  .navbar .navbar__linkGroup {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -1511,7 +1511,7 @@ form * {
     padding-left: 0;
     height: 100%;
     z-index: 100; }
-    .navbar--faqstyle .navbar__linkGroup .navbar__link {
+    .navbar .navbar__linkGroup .navbar__link {
       color: #fff;
       text-decoration: none;
       display: block;
@@ -1520,13 +1520,13 @@ form * {
       padding: 15px 25px;
       transition: 0.3s ease all;
       font-size: 20px; }
-      .navbar--faqstyle .navbar__linkGroup .navbar__link:hover {
+      .navbar .navbar__linkGroup .navbar__link:hover {
         background-color: var(--secondary); }
-      .navbar--faqstyle .navbar__linkGroup .navbar__link.active {
+      .navbar .navbar__linkGroup .navbar__link.active {
         background-color: var(--terciary); }
-    .navbar--faqstyle .navbar__linkGroup.show {
+    .navbar .navbar__linkGroup.show {
       top: 64px; }
-  .navbar--faqstyle .navbar__btn {
+  .navbar .navbar__btn {
     margin-right: 30px;
     font-size: 25px;
     color: #fff;
@@ -1543,10 +1543,10 @@ form * {
   }
   adn (orientation: landscape)
   */
-  .navbar--faqstyle {
+  .navbar {
     height: 65px;
     width: 100%; }
-    .navbar--faqstyle .navbar__brand .navbar__link {
+    .navbar .navbar__brand .navbar__link {
       color: #fff;
       text-decoration: none;
       display: flex;
@@ -1555,9 +1555,9 @@ form * {
       padding: 5px 30px;
       transition: 0.3s ease all;
       font-size: 30px; }
-      .navbar--faqstyle .navbar__brand .navbar__link:hover {
+      .navbar .navbar__brand .navbar__link:hover {
         color: var(--secondary); }
-    .navbar--faqstyle .navbar__linkGroup {
+    .navbar .navbar__linkGroup {
       position: fixed;
       width: 100vw;
       height: calc(100vw - 65px);
@@ -1566,16 +1566,16 @@ form * {
       text-align: center;
       transition: 0.4s all;
       flex-direction: column; }
-      .navbar--faqstyle .navbar__linkGroup li {
+      .navbar .navbar__linkGroup li {
         margin: 30px 0 0 0 0;
         line-height: 30px; }
-      .navbar--faqstyle .navbar__linkGroup .navbar__link {
+      .navbar .navbar__linkGroup .navbar__link {
         padding: 0 0; }
-        .navbar--faqstyle .navbar__linkGroup .navbar__link:hover {
+        .navbar .navbar__linkGroup .navbar__link:hover {
           background-color: var(--secondary); }
-        .navbar--faqstyle .navbar__linkGroup .navbar__link.active {
+        .navbar .navbar__linkGroup .navbar__link.active {
           background-color: var(--terciary); }
-    .navbar--faqstyle .navbar__btn {
+    .navbar .navbar__btn {
       display: inline-flex; } }
 
 /* Moviles Grandes */
@@ -1588,9 +1588,9 @@ form * {
   }
   adn (orientation: landscape)
   */
-  .navbar--faqstyle {
+  .navbar {
     height: 65px; }
-    .navbar--faqstyle .navbar__brand .navbar__link {
+    .navbar .navbar__brand .navbar__link {
       color: #fff;
       text-decoration: none;
       display: flex;
@@ -1599,9 +1599,9 @@ form * {
       padding: 5px 30px;
       transition: 0.3s ease all;
       font-size: 30px; }
-      .navbar--faqstyle .navbar__brand .navbar__link:hover {
+      .navbar .navbar__brand .navbar__link:hover {
         color: var(--secondary); }
-    .navbar--faqstyle .navbar__linkGroup {
+    .navbar .navbar__linkGroup {
       position: fixed;
       width: 100vw;
       height: calc(100vw - 65px);
@@ -1610,25 +1610,25 @@ form * {
       text-align: center;
       transition: 0.4s all;
       flex-direction: column; }
-      .navbar--faqstyle .navbar__linkGroup li {
+      .navbar .navbar__linkGroup li {
         margin: 30px 0 0 0 0;
         line-height: 30px; }
-      .navbar--faqstyle .navbar__linkGroup .navbar__link:hover {
+      .navbar .navbar__linkGroup .navbar__link:hover {
         background-color: var(--secondary); }
-      .navbar--faqstyle .navbar__linkGroup .navbar__link.active {
+      .navbar .navbar__linkGroup .navbar__link.active {
         background-color: var(--terciary); }
-    .navbar--faqstyle .navbar__btn {
+    .navbar .navbar__btn {
       display: inline-flex; } }
 
 /* Tablets */
 @media (min-width: 768px) and (max-width: 992px) {
-  .navbar--faqstyle {
+  .navbar {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto; }
-    .navbar--faqstyle .navbar__brand .navbar__link {
+    .navbar .navbar__brand .navbar__link {
       color: #fff;
       text-decoration: none;
       display: flex;
@@ -1637,15 +1637,15 @@ form * {
       padding: 5px 30px;
       transition: 0.3s ease all;
       font-size: 20px; }
-      .navbar--faqstyle .navbar__brand .navbar__link:hover {
+      .navbar .navbar__brand .navbar__link:hover {
         color: var(--secondary); }
-    .navbar--faqstyle .navbar__linkGroup {
+    .navbar .navbar__linkGroup {
       display: flex;
       flex-wrap: wrap;
       list-style: none;
       margin: 0 30px 0 0;
       height: 100%; }
-      .navbar--faqstyle .navbar__linkGroup .navbar__link {
+      .navbar .navbar__linkGroup .navbar__link {
         color: #fff;
         text-decoration: none;
         display: block;
@@ -1654,11 +1654,11 @@ form * {
         padding: 15px 10px;
         transition: 0.3s ease all;
         font-size: 15px; }
-        .navbar--faqstyle .navbar__linkGroup .navbar__link:hover {
+        .navbar .navbar__linkGroup .navbar__link:hover {
           background-color: var(--secondary); }
-        .navbar--faqstyle .navbar__linkGroup .navbar__link.active {
+        .navbar .navbar__linkGroup .navbar__link.active {
           background-color: var(--terciary); }
-    .navbar--faqstyle .navbar__btn {
+    .navbar .navbar__btn {
       margin-right: 30px;
       font-size: 25px;
       color: #fff;
@@ -1667,13 +1667,13 @@ form * {
 
 /* Pequeños Monitores */
 @media (min-width: 992px) and (max-width: 1200px) {
-  .navbar--faqstyle {
+  .navbar {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto; }
-    .navbar--faqstyle .navbar__brand .navbar__link {
+    .navbar .navbar__brand .navbar__link {
       color: #fff;
       text-decoration: none;
       display: flex;
@@ -1682,9 +1682,9 @@ form * {
       padding: 5px 30px;
       transition: 0.3s ease all;
       font-size: 30px; }
-      .navbar--faqstyle .navbar__brand .navbar__link:hover {
+      .navbar .navbar__brand .navbar__link:hover {
         color: var(--secondary); }
-    .navbar--faqstyle .navbar__linkGroup {
+    .navbar .navbar__linkGroup {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -1693,7 +1693,7 @@ form * {
       padding-left: 0;
       height: 100%;
       z-index: 100; }
-      .navbar--faqstyle .navbar__linkGroup .navbar__link {
+      .navbar .navbar__linkGroup .navbar__link {
         color: #fff;
         text-decoration: none;
         display: block;
@@ -1702,13 +1702,13 @@ form * {
         padding: 15px 25px;
         transition: 0.3s ease all;
         font-size: 20px; }
-        .navbar--faqstyle .navbar__linkGroup .navbar__link:hover {
+        .navbar .navbar__linkGroup .navbar__link:hover {
           background-color: var(--secondary); }
-        .navbar--faqstyle .navbar__linkGroup .navbar__link.active {
+        .navbar .navbar__linkGroup .navbar__link.active {
           background-color: var(--terciary); }
-      .navbar--faqstyle .navbar__linkGroup.show {
+      .navbar .navbar__linkGroup.show {
         top: 64px; }
-    .navbar--faqstyle .navbar__btn {
+    .navbar .navbar__btn {
       margin-right: 30px;
       font-size: 25px;
       color: #fff;
@@ -1717,13 +1717,13 @@ form * {
 
 /* Resto */
 @media (min-width: 1200px) {
-  .navbar--faqstyle {
+  .navbar {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto; }
-    .navbar--faqstyle .navbar__brand .navbar__link {
+    .navbar .navbar__brand .navbar__link {
       color: #fff;
       text-decoration: none;
       display: flex;
@@ -1732,9 +1732,9 @@ form * {
       padding: 5px 30px;
       transition: 0.3s ease all;
       font-size: 30px; }
-      .navbar--faqstyle .navbar__brand .navbar__link:hover {
+      .navbar .navbar__brand .navbar__link:hover {
         color: var(--secondary); }
-    .navbar--faqstyle .navbar__linkGroup {
+    .navbar .navbar__linkGroup {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -1743,7 +1743,7 @@ form * {
       padding-left: 0;
       height: 100%;
       z-index: 100; }
-      .navbar--faqstyle .navbar__linkGroup .navbar__link {
+      .navbar .navbar__linkGroup .navbar__link {
         color: #fff;
         text-decoration: none;
         display: block;
@@ -1752,13 +1752,13 @@ form * {
         padding: 15px 25px;
         transition: 0.3s ease all;
         font-size: 20px; }
-        .navbar--faqstyle .navbar__linkGroup .navbar__link:hover {
+        .navbar .navbar__linkGroup .navbar__link:hover {
           background-color: var(--secondary); }
-        .navbar--faqstyle .navbar__linkGroup .navbar__link.active {
+        .navbar .navbar__linkGroup .navbar__link.active {
           background-color: var(--terciary); }
-      .navbar--faqstyle .navbar__linkGroup.show {
+      .navbar .navbar__linkGroup.show {
         top: 64px; }
-    .navbar--faqstyle .navbar__btn {
+    .navbar .navbar__btn {
       margin-right: 30px;
       font-size: 25px;
       color: #fff;
@@ -2059,7 +2059,7 @@ body {
 .slider--auto {
   position: relative;
   overflow: hidden;
-  min-height: 50%; }
+  height: 100%; }
   .slider--auto .slideshow {
     display: flex;
     flex-wrap: nowrap; }
@@ -2068,11 +2068,12 @@ body {
       transition: 0.3s ease all;
       z-index: 1;
       position: relative;
-      min-height: 50%; }
+      height: 100%; }
       .slider--auto .slideshow .slide img {
         width: 100%;
         object-fit: cover;
-        vertical-align: top; }
+        vertical-align: top;
+        height: 100%; }
       .slider--auto .slideshow .slide .slide__text {
         background: rgba(0, 0, 0, 0.5);
         color: bisque;
@@ -2155,3 +2156,36 @@ table.primaryGridTable tfoot {
 
 table.primaryGridTable tfoot td {
   font-size: 14px; }
+
+.tooltip {
+  position: relative;
+  display: inline-block; }
+  .tooltip .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s; }
+    .tooltip .tooltip-text::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent; }
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1; }
