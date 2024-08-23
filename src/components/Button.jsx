@@ -1,5 +1,10 @@
 import React from 'react'
 
+/**
+ * The `TooltipIconLabel` component in JavaScript React displays an icon with a tooltip and a label.
+ * @returns The `TooltipIconLabel` component is being returned. It consists of a paragraph (`<p>`)
+ * element containing a tooltip with an icon, tooltip text, and a label.
+ */
 export const TooltipIconLabel = ({ icon, tooltipText, label }) => {
     return (
         <p>

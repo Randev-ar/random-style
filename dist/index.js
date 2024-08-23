@@ -102,17 +102,17 @@ const Button = props => {
   })));
 };
 
-const Footer = () => {
-  const linkedin = process.env.REACT_APP_SOCIAL_LINKEDIN;
-  const facebook = process.env.REACT_APP_SOCIAL_FACEBOOK;
-  const github = process.env.REACT_APP_SOCIAL_GITHUB;
-  const instagram = process.env.REACT_APP_SOCIAL_INSTAGRAM;
-  const socialMedia = {
-    linkedin,
-    github,
-    facebook,
-    instagram
-  };
+/* This code defines a functional React component called `Footer`. The component takes in an object as
+its argument with properties `linkedin`, `github`, `facebook`, and `instagram`, which are set to
+default values retrieved from environment variables (`process.env.REACT_APP_SOCIAL_LINKEDIN`,
+`process.env.REACT_APP_SOCIAL_GITHUB`, `process.env.REACT_APP_SOCIAL_FACEBOOK`,
+`process.env.REACT_APP_SOCIAL_INSTAGRAM`). */
+const Footer = ({
+  linkedin = process.env.REACT_APP_SOCIAL_LINKEDIN,
+  github = process.env.REACT_APP_SOCIAL_GITHUB,
+  facebook = process.env.REACT_APP_SOCIAL_FACEBOOK,
+  instagram = process.env.REACT_APP_SOCIAL_INSTAGRAM
+}) => {
   return /*#__PURE__*/React.createElement("footer", null, /*#__PURE__*/React.createElement("div", {
     className: "footer color--white"
   }, /*#__PURE__*/React.createElement("span", {
@@ -125,27 +125,27 @@ const Footer = () => {
     href: "mailto: soporte@randev.com.ar"
   }, "soporte@randev.com.ar")), /*#__PURE__*/React.createElement("div", {
     className: "btn-social-desk"
-  }, socialMedia?.linkedin && /*#__PURE__*/React.createElement("a", {
+  }, linkedin && /*#__PURE__*/React.createElement("a", {
     className: "btn-social color--white ",
-    href: socialMedia.linkedin,
+    href: linkedin,
     target: "blank"
   }, /*#__PURE__*/React.createElement("i", {
     className: "fab fa-linkedin"
-  })), socialMedia?.github && /*#__PURE__*/React.createElement("a", {
+  })), github && /*#__PURE__*/React.createElement("a", {
     className: "btn-social color--white ms--1",
-    href: socialMedia.github,
+    href: github,
     target: "blank"
   }, /*#__PURE__*/React.createElement("i", {
     className: "fab fa-github"
-  })), socialMedia?.facebook && /*#__PURE__*/React.createElement("a", {
+  })), facebook && /*#__PURE__*/React.createElement("a", {
     className: "btn-social color--white ms--1",
-    href: socialMedia.facebook,
+    href: facebook,
     target: "blank"
   }, /*#__PURE__*/React.createElement("i", {
     className: "fab fa-facebook-square"
-  })), socialMedia?.instagram && /*#__PURE__*/React.createElement("a", {
+  })), instagram && /*#__PURE__*/React.createElement("a", {
     className: "btn-social color--white ms--1",
-    href: socialMedia.instagram,
+    href: instagram,
     target: "blank"
   }, /*#__PURE__*/React.createElement("i", {
     className: "fab fa-instagram"
@@ -167,7 +167,7 @@ const Footer = () => {
     className: "color--primary"
   }, "ran"), /*#__PURE__*/React.createElement("span", {
     className: "color--secondary"
-  }, "dev"))), /*#__PURE__*/React.createElement("br", null), "\xA92023 - Random Development")));
+  }, "dev"))), /*#__PURE__*/React.createElement("br", null), "\xA92024 - Random Development")));
 };
 
 const Modal = props => {
