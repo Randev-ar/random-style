@@ -1,6 +1,16 @@
 import React from 'react'
-import TooltipIconLabel from './TooltipIconLabel'
 
+export const TooltipIconLabel = ({ icon, tooltipText, label }) => {
+    return (
+        <p>
+            <div class="tooltip">
+                <b><i className={icon}></i></b>
+                <span class="tooltip-text">{tooltipText}</span>
+            </div>
+            {label}
+        </p>
+    )
+}
 /**
  * Construye un boton con la className predeterminada `boton--e e--2 bg-color--primary mb--1`
  * @param label -> Sera el texto a mostrar en el boton

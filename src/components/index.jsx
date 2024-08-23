@@ -6,7 +6,6 @@ import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import Slideshow from './Slideshow'
 import Spinner from './Spinner'
-import TooltipIconLabel from './TooltipIconLabel'
 import Button from './Button'
 
 export {

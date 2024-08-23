@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, NavLink } from 'react-router-dom';
 
 const Breadcrumb = () => {
@@ -17,7 +17,7 @@ const Breadcrumb = () => {
   return /*#__PURE__*/React.createElement("nav", {
     className: "breadcrumb"
   }, /*#__PURE__*/React.createElement("ol", {
-    className: "conteiner breadcrumb__list"
+    className: "container breadcrumb__list"
   }, pathName?.map(path => {
     if (path !== '') {
       route = `${route}/${path}`;
@@ -30,6 +30,73 @@ const Breadcrumb = () => {
     }, "Home"), path !== '' && /*#__PURE__*/React.createElement(NavLink, {
       to: `${route}`
     }, "/ ", path.replaceAll('-', ' ')));
+  })));
+};
+
+function _extends() {
+  _extends = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends.apply(this, arguments);
+}
+
+const TooltipIconLabel = ({
+  icon,
+  tooltipText,
+  label
+}) => {
+  return /*#__PURE__*/React.createElement("p", null, /*#__PURE__*/React.createElement("div", {
+    class: "tooltip"
+  }, /*#__PURE__*/React.createElement("b", null, /*#__PURE__*/React.createElement("i", {
+    className: icon
+  })), /*#__PURE__*/React.createElement("span", {
+    class: "tooltip-text"
+  }, tooltipText)), label);
+};
+/**
+ * Construye un boton con la className predeterminada `boton--e e--2 bg-color--primary mb--1`
+ * @param label -> Sera el texto a mostrar en el boton
+ * @param icon -> Sera el icono de FontAwsome a mostrar. De enviar esta opcion no se usara label
+ * @param color -> Cambia el color de fondo del boton
+ * @param className -> Cambia la predefinida
+ * @param addClassName -> Agrega opciones a la clase definida
+ * @param rest -> Cualquier otro parametro que se envie se pasara directamente al cuerpo del boton
+ */
+const Button = props => {
+  const {
+    label,
+    icon,
+    color,
+    className,
+    addClassName,
+    image,
+    tooltipText,
+    ...rest
+  } = props;
+  const buttonClassName = className || `boton--e e--2 bg-color--${color || 'primary'} mb--1 ${addClassName}`;
+  return /*#__PURE__*/React.createElement("button", _extends({
+    className: buttonClassName
+  }, rest), /*#__PURE__*/React.createElement("span", null, tooltipText && /*#__PURE__*/React.createElement(TooltipIconLabel, {
+    icon: icon,
+    label: label,
+    tooltipText: tooltipText
+  }), !tooltipText && icon && /*#__PURE__*/React.createElement("i", {
+    className: icon
+  }), !tooltipText && label && label, image && /*#__PURE__*/React.createElement("img", {
+    style: {
+      "max-width": "25px",
+      "width": "100%"
+    },
+    src: image,
+    alt: "img_boton"
   })));
 };
 
@@ -99,69 +166,6 @@ const Footer = () => {
   }, "ran"), /*#__PURE__*/React.createElement("span", {
     className: "color--secondary"
   }, "dev"))), /*#__PURE__*/React.createElement("br", null), "\xA92023 - Random Development")));
-};
-
-const Spinner = () => {
-  return /*#__PURE__*/React.createElement("div", {
-    className: "spinner full-height"
-  });
-};
-
-const Sidebar = ({
-  user,
-  logout,
-  rol,
-  style,
-  navList
-}) => {
-  let title = process.env.REACT_APP_WEBSITE_NAME;
-  const [active, setActive] = useState(false);
-  return /*#__PURE__*/React.createElement("aside", {
-    className: `sidebar ${active && 'active'}  ${user === null && 'd--none'}`,
-    style: style && style.sidebar
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "logo_content"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "logo",
-    style: style && style.logo
-  }, title && /*#__PURE__*/React.createElement("div", {
-    className: "logoname"
-  }, title)), /*#__PURE__*/React.createElement("i", {
-    className: "fa-solid fa-bars",
-    id: "btn",
-    onClick: () => setActive(!active)
-  })), /*#__PURE__*/React.createElement("ul", {
-    className: "nav_list"
-  }, navList?.map(navItem => /*#__PURE__*/React.createElement("li", {
-    key: navItem.to
-  }, /*#__PURE__*/React.createElement(NavLink, {
-    className: "navbar__link",
-    to: navItem.to
-  }, /*#__PURE__*/React.createElement("i", {
-    className: navItem.icon
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "links_name"
-  }, navItem.name)), /*#__PURE__*/React.createElement("span", {
-    className: "tooltip"
-  }, navItem.name)))), /*#__PURE__*/React.createElement("div", {
-    className: "profile_content bg--primary"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "profile"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "profile_details"
-  }, /*#__PURE__*/React.createElement(NavLink, {
-    to: "/profile"
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "name_job"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "name"
-  }, user?.displayName), rol && /*#__PURE__*/React.createElement("div", {
-    className: "job"
-  }, rol))), /*#__PURE__*/React.createElement("i", {
-    className: "fas fa-sign-out-alt",
-    id: "log_out",
-    onClick: logout
-  }))));
 };
 
 const Modal = props => {
@@ -234,6 +238,175 @@ const ModalButtonWrapper = ({
     onClose: onClose,
     bgClose: bgClose
   }, children));
+};
+
+const Navbar = ({
+  src,
+  title,
+  list
+}) => {
+  const [show, setShow] = useState('');
+  return /*#__PURE__*/React.createElement("nav", {
+    className: "navbar"
+  }, /*#__PURE__*/React.createElement("label", {
+    className: "navbar__brand"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: src,
+    className: "logo_name",
+    alt: "logo",
+    style: {
+      maxWidth: '10rem'
+    }
+  }), /*#__PURE__*/React.createElement("p", {
+    className: "navbar__link"
+  }, title)), /*#__PURE__*/React.createElement("ul", {
+    className: `navbar__linkGroup ${show}`
+  }, list), /*#__PURE__*/React.createElement("span", {
+    className: "navbar__btn",
+    onClick: () => show === '' ? setShow('show') : setShow('')
+  }, /*#__PURE__*/React.createElement("i", {
+    className: "fas fa-bars"
+  })));
+};
+
+const Sidebar = ({
+  user,
+  logout,
+  rol,
+  style,
+  navList
+}) => {
+  let title = process.env.REACT_APP_WEBSITE_NAME;
+  const [active, setActive] = useState(false);
+  return /*#__PURE__*/React.createElement("aside", {
+    className: `sidebar ${active && 'active'}  ${user === null && 'd--none'}`,
+    style: style && style.sidebar
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "logo_content"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "logo",
+    style: style && style.logo
+  }, title && /*#__PURE__*/React.createElement("div", {
+    className: "logoname"
+  }, title)), /*#__PURE__*/React.createElement("i", {
+    className: "fa-solid fa-bars",
+    id: "btn",
+    onClick: () => setActive(!active)
+  })), /*#__PURE__*/React.createElement("ul", {
+    className: "nav_list"
+  }, navList?.map(navItem => /*#__PURE__*/React.createElement("li", {
+    key: navItem.to
+  }, /*#__PURE__*/React.createElement(NavLink, {
+    className: "navbar__link",
+    to: navItem.to
+  }, /*#__PURE__*/React.createElement("i", {
+    className: navItem.icon
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "links_name"
+  }, navItem.name)), /*#__PURE__*/React.createElement("span", {
+    className: "tooltip"
+  }, navItem.name)))), /*#__PURE__*/React.createElement("div", {
+    className: "profile_content bg--primary"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "profile"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "profile_details"
+  }, /*#__PURE__*/React.createElement(NavLink, {
+    to: "/profile"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "name_job"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "name"
+  }, user?.displayName), rol && /*#__PURE__*/React.createElement("div", {
+    className: "job"
+  }, rol))), /*#__PURE__*/React.createElement("i", {
+    className: "fas fa-sign-out-alt",
+    id: "log_out",
+    onClick: logout
+  }))));
+};
+
+/*
+<a href='https://faqtoff.com' target='_blank' rel='noreferrer'>
+    <img src={Img1} alt=''/>
+    <div className='text-slide'>
+        <p>hola</p>
+    </div>
+</a>
+*/
+
+const Slideshow = ({
+  children
+}) => {
+  const slideshow = useRef(null);
+  const intervaloSlideshow = useRef(null);
+  const siguiente = () => {
+    if (slideshow.current?.children.length > 0) {
+      const firstElement = slideshow.current?.children[0];
+      slideshow.current.style.transition = `5000ms ease-out all`;
+      const slideSize = slideshow.current?.children[0].offsetWidth;
+      slideshow.current.style.transform = `translateX(-${slideSize}px)`;
+      const transition = () => {
+        slideshow.current.style.transition = 'none';
+        slideshow.current.style.transform = 'translateX(0)';
+        slideshow.current.appendChild(firstElement);
+        slideshow.current.removeEventListener('transitionend', transition);
+      };
+      slideshow.current.addEventListener('transitionend', transition);
+    }
+  };
+  const anterior = () => {
+    if (slideshow.current.children.length > 0) {
+      const index = slideshow.current.children.length - 1;
+      const lastElement = slideshow.current.children[index];
+      slideshow.current.insertBefore(lastElement, slideshow.current.firstChild);
+      slideshow.current.style.transition = 'none';
+      const slideSize = slideshow.current.children[0].offsetWidth;
+      slideshow.current.style.transform = `translateX(-${slideSize}px)`;
+      setTimeout(() => {
+        slideshow.current.style.transition = `5000ms ease-out all`;
+        slideshow.current.style.transform = 'translateX(0)';
+      }, 30);
+    }
+  };
+  useEffect(() => {
+    intervaloSlideshow.current = setInterval(() => {
+      siguiente();
+    }, 5000);
+    slideshow.current.addEventListener('mouseenter', () => {
+      clearInterval(intervaloSlideshow.current);
+    });
+    slideshow.current.addEventListener('mouseleave', () => {
+      intervaloSlideshow.current = setInterval(() => {
+        siguiente();
+      }, 5000);
+    });
+    return;
+  }, []);
+  return /*#__PURE__*/React.createElement("div", {
+    className: "slider--auto"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "slideshow",
+    ref: slideshow
+  }, children), /*#__PURE__*/React.createElement("div", {
+    className: "slide__controls"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "slide__button",
+    onClick: anterior
+  }, /*#__PURE__*/React.createElement("i", {
+    className: "fas fa-chevron-left"
+  })), /*#__PURE__*/React.createElement("button", {
+    className: "slide__button",
+    onClick: siguiente
+  }, /*#__PURE__*/React.createElement("i", {
+    className: "fas fa-chevron-right"
+  }))));
+};
+
+const Spinner = () => {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "spinner full-height"
+  });
 };
 
 /* This is a React component that receives a data object with headers and items. */
@@ -337,21 +510,6 @@ const FormInput = ({
   }, /*#__PURE__*/React.createElement("label", labelProps, label), type === 'textarea' ? /*#__PURE__*/React.createElement("textarea", textAreaProps) : /*#__PURE__*/React.createElement("input", inputProps));
 };
 
-function _extends() {
-  _extends = Object.assign ? Object.assign.bind() : function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-    return target;
-  };
-  return _extends.apply(this, arguments);
-}
-
 /* A React component that is a select input. */
 const FormSelect = ({
   value,
@@ -400,33 +558,4 @@ const FormSelect = ({
   })));
 };
 
-const Navbar = ({
-  src,
-  titulo,
-  list
-}) => {
-  const [show, setShow] = useState('');
-  return /*#__PURE__*/React.createElement("nav", {
-    className: "navbar--faqstyle"
-  }, /*#__PURE__*/React.createElement("label", {
-    className: "navbar__brand"
-  }, /*#__PURE__*/React.createElement("img", {
-    src: src,
-    className: "logoname",
-    alt: "logo",
-    style: {
-      maxWidth: '10rem'
-    }
-  }), /*#__PURE__*/React.createElement("p", {
-    className: "navbar__link"
-  }, titulo)), /*#__PURE__*/React.createElement("ul", {
-    className: `navbar__linkGroup ${show}`
-  }, list), /*#__PURE__*/React.createElement("span", {
-    className: "navbar__btn",
-    onClick: () => show === '' ? setShow('show') : setShow('')
-  }, /*#__PURE__*/React.createElement("i", {
-    className: "fas fa-bars"
-  })));
-};
-
-export { Breadcrumb, Footer, FormInput, FormSelect, Modal, ModalButtonWrapper, Navbar, Sidebar, Spinner, Table };
+export { Breadcrumb, Button, Footer, FormInput, FormSelect, Modal, ModalButtonWrapper, Navbar, Sidebar, Slideshow, Spinner, Table, TooltipIconLabel };
